@@ -1,0 +1,3 @@
+<step title="Startup Request" date="2018-03-02T19:32:49.246" instance="d91462" url="/api/vfs/site/deployment.log" method="GET" type="request" pid="1036,3,9" SCM_SKIP_SSL_VALIDATION="0" ScmType="None" >
+  <step title="Cleanup Xml Logs" date="2018-03-02T19:32:49.246" /><!-- duration: 0ms -->
+</step><!-- duration: 16ms -->

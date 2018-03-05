@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment>
+  <deployer>courtneo@microsoft.com</deployer>
+  <provisioningState>succeeded</provisioningState>
+  <startTime>2018-03-02T19:32:30.1575846Z</startTime>
+  <endTime>2018-03-02T19:32:36.0672628Z</endTime>
+  <complete>true</complete>
+  <runningWorker>RD0003FF464B6D</runningWorker>
+  <runningProcessId>1036</runningProcessId>
+</deployment>

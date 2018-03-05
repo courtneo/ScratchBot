@@ -1,0 +1,348 @@
+{"level":5,"message":"Serving workspaces from \"D:\\home\\site\"","timestamp":1520019222054}
+{"level":5,"message":"Creating D:\\home\\site\\Diagnostics\\settings.json with defaults","timestamp":1520019222569}
+{"level":5,"message":"File watcher installed on path: D:\\home\\site","timestamp":1520019222569}
+{"level":2,"message":"at    30ms\tcreateServer() - start","timestamp":1520019222734}
+{"level":2,"message":"at    30ms\ttime    47ms\tcontributionManager init()","timestamp":1520019222734}
+{"level":2,"message":"at   280ms\ttime     0ms\tcontributionManager registerExtensions()","timestamp":1520019222734}
+{"level":2,"message":"at   280ms\ttime   610ms\tconfig.configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime    34ms\tcom.microsoft.vs.git configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   480ms\tcom.microsoft.vs.http configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   480ms\tcom.microsoft.vs.feedback configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   480ms\tcom.microsoft.vs.telemetryService configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   480ms\tcom.microsoft.vs.telemetry configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   480ms\tcom.microsoft.vs.tfs configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   480ms\tcom.microsoft.vs.ipc configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   480ms\tcom.microsoft.vs.process configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   480ms\tcom.microsoft.vs.file configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   480ms\tcom.microsoft.vs.search configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   527ms\tcom.microsoft.vs.output configure()","timestamp":1520019222734}
+{"level":2,"message":"at   925ms\ttime   527ms\tcontributionManager configure()","timestamp":1520019222734}
+{"level":2,"message":"at  1452ms\ttime    63ms\tserver.configure()","timestamp":1520019222734}
+{"level":2,"message":"at  1515ms\ttime     0ms\tmiddleware.plugin()","timestamp":1520019222734}
+{"level":2,"message":"at  1515ms\ttime    31ms\troutes.route()","timestamp":1520019222734}
+{"level":2,"message":"at  1570ms\tcreateServer() - end","timestamp":1520019222734}
+{"level":5,"message":"Monaco server running at port \\\\.\\pipe\\40aa6cb3-bbfe-4b39-8b5d-ef6860a6530d from D:\\Program Files (x86)\\SiteExtensions\\Monaco\\1.0.0-20171206\\server using node v0.10.40","timestamp":1520019223069}
+{"level":5,"message":"Detected project type: ASP.NET","timestamp":1520019223069}
+{"level":1,"message":"request","timestamp":1520019223429,"responseTime":31,"method":"GET","path":"/dev/wwwroot/:vs.markdown/readme.md","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019223507,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/loader.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019223429,"responseTime":31,"method":"GET","path":"/dev/wwwroot/:vs.markdown/readme.md","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019223507,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/loader.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019225007,"responseTime":172,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/monaco/ui/workbench/web/workbench.main.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019226397,"responseTime":12,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/monaco/ui/workbench/web/workbench.main.css","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019227603,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/monaco/ui/workbench/web/workbench.main.nls.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251584,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"Not found","timestamp":1520019251663,"method":"GET","path":"/dev/api/files/wwwroot/.settings","statusCode":404}
+{"level":1,"message":"Missing access token.","timestamp":1520019251678,"method":"GET","path":"/dev/api/tfs/wwwroot/status","statusCode":412}
+{"level":1,"message":"request","timestamp":1520019251694,"responseTime":31,"method":"GET","path":"/dev/api/files/wwwroot/","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251709,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/ui/parts/editor/media/info.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251709,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/ui/parts/editor/media/forward.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251725,"responseTime":16,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/ui/widgets/shell/media/settings.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251741,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/search/media/search-dark.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251741,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/terminal/media/console-global.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251756,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/output/media/output-global.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251756,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/files/media/files-dark.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251772,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/git-dark.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251788,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/actions/media/quickopen-global.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251803,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/output/media/runworkspace-global.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251819,"responseTime":16,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/worker/workerMain.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251819,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/worker/workerMain.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251834,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/worker/workerMain.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251881,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251897,"responseTime":16,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/ui/parts/editor/media/letterpress.png","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251897,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/ui/widgets/arrow-expand.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251944,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/worker/workerServer.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251944,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/ui/widgets/shell/media/logo.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019251960,"responseTime":16,"method":"GET","path":"/dev/api/files/wwwroot/readme.md","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019252006,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/monaco/contrib/feedback/smiley.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019252038,"responseTime":188,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":204}
+{"level":1,"message":"request","timestamp":1520019252147,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/languages/markdown/markdown.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019252288,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/ui/widgets/shell/media/help.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019252834,"responseTime":31,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/editor/worker/editorWorkerServer.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019256289,"responseTime":15,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/editor/worker/editorWorkerServer.nls.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019256414,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/files/media/ViewSource.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019256414,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/ui/parts/editor/media/SplitEditor.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019256446,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/files/media/Refresh.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019256524,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/ui/widgets/toolbar/ellipsis.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019262298,"responseTime":109,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":204}
+{"level":1,"message":"request","timestamp":1520019271008,"responseTime":16,"method":"POST","path":"/dev/api/files/wwwroot/Controllers/","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273258,"responseTime":16,"method":"GET","path":"/dev/api/files/wwwroot/Controllers/MessagesController.cs","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273305,"responseTime":172,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019273555,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/plugins/vs.language.csharp/csharpMain.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273727,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/editor/contrib/find/expando-collapsed.png","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273742,"responseTime":15,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/ui/widgets/whole-word.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273742,"responseTime":15,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/ui/widgets/case-sensitive.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273742,"responseTime":15,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/base/ui/widgets/regex.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273789,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/editor/contrib/find/cancelSelectionFind.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273789,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/editor/contrib/find/next.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273789,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/Compare.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273852,"responseTime":63,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/editor/contrib/find/close.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273852,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/editor/contrib/quickFix/lightbulp.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019273883,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/editor/contrib/find/previous.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019275002,"responseTime":0,"method":"POST","path":"/dev/api/files/wwwroot/Dialogs/","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019276737,"responseTime":16,"method":"GET","path":"/dev/api/files/wwwroot/Dialogs/EchoDialog.cs","statusCode":200}
+{"level":1,"message":"Not modified since","timestamp":1520019290494,"method":"GET","path":"/dev/api/files/wwwroot/Controllers/MessagesController.cs","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019290494,"responseTime":0,"method":"GET","path":"/dev/api/files/wwwroot/Controllers/MessagesController.cs","statusCode":304}
+{"level":1,"message":"Not modified since","timestamp":1520019290494,"method":"GET","path":"/dev/api/files/wwwroot/Controllers/MessagesController.cs","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019290494,"responseTime":0,"method":"GET","path":"/dev/api/files/wwwroot/Controllers/MessagesController.cs","statusCode":304}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520019303367}
+{"level":1,"message":"request","timestamp":1520019303632,"responseTime":47,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"Not modified since","timestamp":1520019347862,"method":"GET","path":"/dev/api/files/wwwroot/Dialogs/EchoDialog.cs","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019347862,"responseTime":15,"method":"GET","path":"/dev/api/files/wwwroot/Dialogs/EchoDialog.cs","statusCode":304}
+{"level":1,"message":"Not modified since","timestamp":1520019347862,"method":"GET","path":"/dev/api/files/wwwroot/Dialogs/EchoDialog.cs","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019347862,"responseTime":15,"method":"GET","path":"/dev/api/files/wwwroot/Dialogs/EchoDialog.cs","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019359652,"responseTime":32,"method":"POST","path":"/dev/api/files/wwwroot/bin/","statusCode":200}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520019363374}
+{"level":1,"message":"request","timestamp":1520019373090,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/files/media/AddFile.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019373184,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/files/media/AddFolder.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019377840,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019387961,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/terminal/terminalEditor.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019388695,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/terminal/terminalEditor.css","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019388742,"responseTime":31,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/terminal/terminalEditor.nls.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019389492,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/terminal/terminalMode.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019389508,"responseTime":94,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019389758,"responseTime":16,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/terminal/media/console-global-toggled.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019389883,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/terminal/media/switch-to-console.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019389883,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/terminal/media/Clearoutput.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019390008,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/terminal/media/new-console.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019398093,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/gitViewlet.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019398702,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/gitViewlet.nls.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019398702,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/gitViewlet.css","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019398796,"responseTime":16,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/Refresh.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019398889,"responseTime":109,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":204}
+{"level":1,"message":"request","timestamp":1520019419772,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019421525,"responseTime":1002,"method":"POST","path":"/dev/api/git/wwwroot/init","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019421603,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/check.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019421666,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/sync.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019421666,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/branch.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019421712,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/undo.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019421712,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/add.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019422400,"responseTime":750,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019423056,"responseTime":625,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019444652,"responseTime":3248,"method":"POST","path":"/dev/api/git/wwwroot/commit","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019451653,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520019483365}
+{"level":1,"message":"request","timestamp":1520019518838,"responseTime":31,"method":"POST","path":"/dev/api/files/wwwroot/","statusCode":200}
+{"level":1,"message":"Not modified since","timestamp":1520019519229,"method":"GET","path":"/dev/api/files/wwwroot/Dialogs/EchoDialog.cs","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019519229,"responseTime":0,"method":"GET","path":"/dev/api/files/wwwroot/Dialogs/EchoDialog.cs","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019519463,"responseTime":156,"method":"GET","path":"/dev/api/git/wwwroot/show/HEAD/Dialogs/EchoDialog.cs","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019520010,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/files/media/closeall.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019520010,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/files/media/closeall.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019520776,"responseTime":891,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019543473,"responseTime":954,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019548644,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019608069,"responseTime":797,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019638364,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019664501,"responseTime":969,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019683075,"responseTime":891,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019687910,"responseTime":16,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"Not found","timestamp":1520019697262,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":404}
+{"level":1,"message":"request","timestamp":1520019697356,"responseTime":32,"method":"PUT","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019697949,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/languages/json/json.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019697996,"responseTime":140,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019698731,"responseTime":16,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019698731,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/ui/parts/editor/media/grab.cur","statusCode":200}
+{"level":1,"message":"Not modified since","timestamp":1520019699568,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019699568,"responseTime":0,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"Not modified since","timestamp":1520019699568,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019699568,"responseTime":0,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520019699834,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/languages/json/json.nls.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019700178,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019699834,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/languages/json/json.nls.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019700178,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019708136,"responseTime":15,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019708308,"responseTime":125,"method":"GET","path":"/dev/api/git/wwwroot/show/HEAD/.settings/settings.json","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019708558,"responseTime":844,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":200}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520019723407}
+{"level":1,"message":"request","timestamp":1520019727287,"responseTime":47,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019745634,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019776334,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019786243,"responseTime":984,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019900269,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520019911257,"responseTime":1001,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019946618,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/ui/parts/editor/media/grabbing.cur","statusCode":200}
+{"level":1,"message":"request","timestamp":1520019969164,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520020004250,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520020025513,"responseTime":937,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020028862,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/undo-focus.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020028862,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/add-focus.svg","statusCode":200}
+{"level":1,"message":"Not modified since","timestamp":1520020028877,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020028877,"responseTime":15,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020029065,"responseTime":125,"method":"GET","path":"/dev/api/git/wwwroot/show/HEAD/.settings/settings.json","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020028862,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/undo-focus.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020028862,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/add-focus.svg","statusCode":200}
+{"level":1,"message":"Not modified since","timestamp":1520020028877,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020028877,"responseTime":15,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020029065,"responseTime":125,"method":"GET","path":"/dev/api/git/wwwroot/show/HEAD/.settings/settings.json","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020028862,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/undo-focus.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020028862,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/add-focus.svg","statusCode":200}
+{"level":1,"message":"Not modified since","timestamp":1520020028877,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020028877,"responseTime":15,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020029065,"responseTime":125,"method":"GET","path":"/dev/api/git/wwwroot/show/HEAD/.settings/settings.json","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020028862,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/undo-focus.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020028862,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/git/media/add-focus.svg","statusCode":200}
+{"level":1,"message":"Not modified since","timestamp":1520020028877,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020028877,"responseTime":15,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020029065,"responseTime":125,"method":"GET","path":"/dev/api/git/wwwroot/show/HEAD/.settings/settings.json","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020032259,"responseTime":937,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020055204,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/search/searchViewlet.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020055845,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/search/searchViewlet.css","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020055860,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/search/searchViewlet.nls.js","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020055939,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/search/media/clear-search-results.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020055939,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/search/media/CollapseAll.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020055939,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/search/media/Refresh.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020057573,"responseTime":34,"method":"POST","path":"/dev/api/files/wwwroot/","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020058148,"responseTime":15,"method":"POST","path":"/dev/api/files/wwwroot/","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020058867,"responseTime":16,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520020060060,"responseTime":0,"method":"GET","path":"/dev/public/e01a9049-313c492c/vs/workbench/contrib/files/media/action-close.svg","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020070724,"responseTime":0,"method":"GET","path":"/dev","statusCode":302}
+{"level":1,"message":"request","timestamp":1520020070787,"responseTime":0,"method":"GET","path":"/dev/wwwroot/","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020070849,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020071870,"responseTime":16,"method":"GET","path":"/dev/api/files/wwwroot/.settings","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020071932,"responseTime":15,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"Missing access token.","timestamp":1520020071995,"method":"GET","path":"/dev/api/tfs/wwwroot/status","statusCode":412}
+{"level":1,"message":"request","timestamp":1520020072026,"responseTime":16,"method":"POST","path":"/dev/api/files/wwwroot/","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020072042,"responseTime":0,"method":"POST","path":"/dev/api/files/wwwroot/","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020072057,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/","statusCode":200}
+{"level":1,"message":"Not modified since","timestamp":1520020072089,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020072104,"responseTime":15,"method":"GET","path":"/dev/api/files/wwwroot/.settings/settings.json","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020073385,"responseTime":781,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":304}
+{"level":1,"message":"request","timestamp":1520020073432,"responseTime":31,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520020074135,"responseTime":140,"method":"GET","path":"/dev/api/git/wwwroot/show/HEAD/.settings/settings.json","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020074313,"responseTime":125,"method":"GET","path":"/dev/api/git/wwwroot/show/HEAD/.settings/settings.json","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020074547,"responseTime":93,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520020074891,"responseTime":912,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020104796,"responseTime":78,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520020196615,"responseTime":985,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520020203427}
+{"level":1,"message":"request","timestamp":1520020224786,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520020317808,"responseTime":941,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020439543,"responseTime":937,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020560859,"responseTime":954,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020682074,"responseTime":906,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020803233,"responseTime":924,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520020924829,"responseTime":969,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520021046032,"responseTime":984,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520021163439}
+{"level":1,"message":"request","timestamp":1520021167300,"responseTime":1049,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520021221249,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520021289321,"responseTime":891,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520021358254,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520021411762,"responseTime":938,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520021533863,"responseTime":922,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520021655357,"responseTime":937,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520021727660,"responseTime":813,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":304}
+{"level":1,"message":"request","timestamp":1520021753257,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520021777189,"responseTime":938,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520021899806,"responseTime":1000,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520021913310,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520022021541,"responseTime":1032,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022143755,"responseTime":938,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022265377,"responseTime":938,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022387710,"responseTime":937,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022509408,"responseTime":984,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022631955,"responseTime":922,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":5,"message":"Serving workspaces from \"D:\\home\\site\"","timestamp":1520022758731}
+{"level":5,"message":"File watcher installed on path: D:\\home\\site","timestamp":1520022759309}
+{"level":5,"message":"Found D:\\home\\site\\Diagnostics\\settings.json with contents: {\"AzureDriveEnabled\":true,\"AzureDriveTraceLevel\":\"Information\"}","timestamp":1520022759325}
+{"level":2,"message":"at    31ms\tcreateServer() - start","timestamp":1520022759434}
+{"level":2,"message":"at    31ms\ttime    31ms\tcontributionManager init()","timestamp":1520022759434}
+{"level":2,"message":"at   281ms\ttime     0ms\tcontributionManager registerExtensions()","timestamp":1520022759434}
+{"level":2,"message":"at   281ms\ttime   625ms\tconfig.configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime    46ms\tcom.microsoft.vs.git configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   546ms\tcom.microsoft.vs.http configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   546ms\tcom.microsoft.vs.feedback configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   546ms\tcom.microsoft.vs.tfs configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   546ms\tcom.microsoft.vs.telemetryService configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   546ms\tcom.microsoft.vs.telemetry configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   546ms\tcom.microsoft.vs.ipc configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   546ms\tcom.microsoft.vs.process configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   546ms\tcom.microsoft.vs.file configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   546ms\tcom.microsoft.vs.search configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   578ms\tcom.microsoft.vs.output configure()","timestamp":1520022759434}
+{"level":2,"message":"at   938ms\ttime   578ms\tcontributionManager configure()","timestamp":1520022759434}
+{"level":2,"message":"at  1516ms\ttime    46ms\tserver.configure()","timestamp":1520022759434}
+{"level":2,"message":"at  1562ms\ttime     0ms\tmiddleware.plugin()","timestamp":1520022759434}
+{"level":2,"message":"at  1562ms\ttime    47ms\troutes.route()","timestamp":1520022759434}
+{"level":2,"message":"at  1609ms\tcreateServer() - end","timestamp":1520022759434}
+{"level":5,"message":"Monaco server running at port \\\\.\\pipe\\2b1c39c0-acb0-4514-bd20-6785a36aa52e from D:\\Program Files (x86)\\SiteExtensions\\Monaco\\1.0.0-20171206\\server using node v0.10.40","timestamp":1520022759809}
+{"level":5,"message":"Detected project type: ASP.NET","timestamp":1520022759809}
+{"level":1,"message":"request","timestamp":1520022760216,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022760216,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022761216,"responseTime":1110,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022761731,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022762059,"responseTime":797,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":304}
+{"level":5,"message":"Serving workspaces from \"D:\\home\\site\"","timestamp":1520022828204}
+{"level":5,"message":"File watcher installed on path: D:\\home\\site","timestamp":1520022828735}
+{"level":5,"message":"Found D:\\home\\site\\Diagnostics\\settings.json with contents: {\"AzureDriveEnabled\":true,\"AzureDriveTraceLevel\":\"Information\"}","timestamp":1520022828751}
+{"level":2,"message":"at    28ms\tcreateServer() - start","timestamp":1520022828863}
+{"level":2,"message":"at    28ms\ttime    47ms\tcontributionManager init()","timestamp":1520022828863}
+{"level":2,"message":"at   262ms\ttime     0ms\tcontributionManager registerExtensions()","timestamp":1520022828863}
+{"level":2,"message":"at   262ms\ttime   563ms\tconfig.configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime    34ms\tcom.microsoft.vs.git configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   484ms\tcom.microsoft.vs.http configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   484ms\tcom.microsoft.vs.feedback configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   484ms\tcom.microsoft.vs.telemetryService configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   484ms\tcom.microsoft.vs.telemetry configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   484ms\tcom.microsoft.vs.tfs configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   484ms\tcom.microsoft.vs.ipc configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   484ms\tcom.microsoft.vs.process configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   484ms\tcom.microsoft.vs.file configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   484ms\tcom.microsoft.vs.search configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   500ms\tcom.microsoft.vs.output configure()","timestamp":1520022828863}
+{"level":2,"message":"at   856ms\ttime   500ms\tcontributionManager configure()","timestamp":1520022828863}
+{"level":2,"message":"at  1356ms\ttime    62ms\tserver.configure()","timestamp":1520022828863}
+{"level":2,"message":"at  1418ms\ttime    20ms\tmiddleware.plugin()","timestamp":1520022828863}
+{"level":2,"message":"at  1438ms\ttime    30ms\troutes.route()","timestamp":1520022828863}
+{"level":2,"message":"at  1468ms\tcreateServer() - end","timestamp":1520022828863}
+{"level":5,"message":"Monaco server running at port \\\\.\\pipe\\dcd63fd0-aa6d-484f-a043-9fa2dcca85a7 from D:\\Program Files (x86)\\SiteExtensions\\Monaco\\1.0.0-20171206\\server using node v0.10.40","timestamp":1520022829235}
+{"level":5,"message":"Detected project type: ASP.NET","timestamp":1520022829235}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022829782,"responseTime":0,"method":"POST","path":"/dev/api/events/wwwroot/connect","statusCode":200}
+{"level":1,"message":"request","timestamp":1520022832145,"responseTime":891,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":304}
+{"level":1,"message":"request","timestamp":1520022883395,"responseTime":969,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520023005933,"responseTime":953,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520023127451,"responseTime":922,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520023249441,"responseTime":953,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520023371932,"responseTime":985,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520023493580,"responseTime":938,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520023616072,"responseTime":1031,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520023660110,"responseTime":802,"method":"GET","path":"/dev/api/git/wwwroot/status","statusCode":304}
+{"level":1,"message":"request","timestamp":1520023685217,"responseTime":16,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520023715295}
+{"level":1,"message":"request","timestamp":1520023737463,"responseTime":938,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520023775315}
+{"level":1,"message":"request","timestamp":1520023828887,"responseTime":0,"method":"POST","path":"/dev/api/telemetry/wwwroot/","statusCode":201}
+{"level":1,"message":"request","timestamp":1520023859145,"responseTime":939,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520023895326}
+{"level":1,"message":"request","timestamp":1520023980889,"responseTime":984,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520024102927,"responseTime":937,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520024135334}
+{"level":1,"message":"request","timestamp":1520024224870,"responseTime":984,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520024346448,"responseTime":953,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520024472906,"responseTime":1054,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520024594210,"responseTime":938,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":6,"message":"Unable to contact telemetry service: Error: getaddrinfo ENOTFOUND","timestamp":1520024615436}
+{"level":1,"message":"request","timestamp":1520024715198,"responseTime":906,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520024836631,"responseTime":1158,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520024958244,"responseTime":938,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520025080323,"responseTime":1017,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520025202284,"responseTime":984,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}
+{"level":1,"message":"request","timestamp":1520025324287,"responseTime":969,"method":"POST","path":"/dev/api/git/wwwroot/fetch","statusCode":200}

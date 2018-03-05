@@ -1,0 +1,1155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entries>
+  <entry time="2018-03-02T19:32:30.1732094Z" type="Message">
+    <message>Downloading package path 'bot-packages/csharp-abs-webapp_simpleechobot_precompiled.zip' from blob 'https://connectorprod.blob.core.windows.net'</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.4266283Z" type="Message">
+    <message>The following parameters were populated: 'IIS Web Application Name'</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.4266283Z" type="Message">
+    <message>Calling SyncTo() on package.</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.7860295Z" type="Message">
+    <message>Adding file (scratchbot\.deployment).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.7860295Z" type="Message">
+    <message>Adding file (scratchbot\.deployment).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8172526Z" type="Message">
+    <message>Adding file (scratchbot\.gitignore).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8172526Z" type="Message">
+    <message>Adding file (scratchbot\.gitignore).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8172526Z" type="Message">
+    <message>Adding directory (scratchbot\App_Start).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8172526Z" type="Message">
+    <message>Adding directory (scratchbot\App_Start).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8328719Z" type="Message">
+    <message>Adding file (scratchbot\App_Start\WebApiConfig.cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8328719Z" type="Message">
+    <message>Adding file (scratchbot\App_Start\WebApiConfig.cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8328719Z" type="Message">
+    <message>Adding directory (scratchbot\bin).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8328719Z" type="Message">
+    <message>Adding directory (scratchbot\bin).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8328719Z" type="Message">
+    <message>Adding directory (scratchbot\bin\ar).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8328719Z" type="Message">
+    <message>Adding directory (scratchbot\bin\ar).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8328719Z" type="Message">
+    <message>Adding file (scratchbot\bin\ar\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8328719Z" type="Message">
+    <message>Adding file (scratchbot\bin\ar\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8484986Z" type="Message">
+    <message>Adding file (scratchbot\bin\Autofac.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8484986Z" type="Message">
+    <message>Adding file (scratchbot\bin\Autofac.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8641314Z" type="Message">
+    <message>Adding file (scratchbot\bin\Autofac.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8641314Z" type="Message">
+    <message>Adding file (scratchbot\bin\Autofac.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8641314Z" type="Message">
+    <message>Adding file (scratchbot\bin\Chronic.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8641314Z" type="Message">
+    <message>Adding file (scratchbot\bin\Chronic.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8797708Z" type="Message">
+    <message>Adding directory (scratchbot\bin\cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8797708Z" type="Message">
+    <message>Adding directory (scratchbot\bin\cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8797708Z" type="Message">
+    <message>Adding file (scratchbot\bin\cs\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8797708Z" type="Message">
+    <message>Adding file (scratchbot\bin\cs\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8797708Z" type="Message">
+    <message>Adding directory (scratchbot\bin\de).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8797708Z" type="Message">
+    <message>Adding directory (scratchbot\bin\de).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8953785Z" type="Message">
+    <message>Adding file (scratchbot\bin\de\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8953785Z" type="Message">
+    <message>Adding file (scratchbot\bin\de\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8953785Z" type="Message">
+    <message>Adding file (scratchbot\bin\de\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.8953785Z" type="Message">
+    <message>Adding file (scratchbot\bin\de\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9110035Z" type="Message">
+    <message>Adding file (scratchbot\bin\de\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9110035Z" type="Message">
+    <message>Adding file (scratchbot\bin\de\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9110035Z" type="Message">
+    <message>Adding file (scratchbot\bin\de\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9110035Z" type="Message">
+    <message>Adding file (scratchbot\bin\de\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9110035Z" type="Message">
+    <message>Adding directory (scratchbot\bin\de-dE).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9110035Z" type="Message">
+    <message>Adding directory (scratchbot\bin\de-dE).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9266232Z" type="Message">
+    <message>Adding file (scratchbot\bin\de-dE\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9266232Z" type="Message">
+    <message>Adding file (scratchbot\bin\de-dE\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9266232Z" type="Message">
+    <message>Adding file (scratchbot\bin\DocumentDB.Spatial.Sql.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9266232Z" type="Message">
+    <message>Adding file (scratchbot\bin\DocumentDB.Spatial.Sql.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9735048Z" type="Message">
+    <message>Adding directory (scratchbot\bin\en).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9735048Z" type="Message">
+    <message>Adding directory (scratchbot\bin\en).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9735048Z" type="Message">
+    <message>Adding file (scratchbot\bin\en\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9735048Z" type="Message">
+    <message>Adding file (scratchbot\bin\en\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9735048Z" type="Message">
+    <message>Adding file (scratchbot\bin\EntityFramework.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:32.9735048Z" type="Message">
+    <message>Adding file (scratchbot\bin\EntityFramework.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.2078811Z" type="Message">
+    <message>Adding file (scratchbot\bin\EntityFramework.SqlServer.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.2078811Z" type="Message">
+    <message>Adding file (scratchbot\bin\EntityFramework.SqlServer.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.2235082Z" type="Message">
+    <message>Adding file (scratchbot\bin\EntityFramework.SqlServer.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.2235082Z" type="Message">
+    <message>Adding file (scratchbot\bin\EntityFramework.SqlServer.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.2235082Z" type="Message">
+    <message>Adding file (scratchbot\bin\EntityFramework.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.2235082Z" type="Message">
+    <message>Adding file (scratchbot\bin\EntityFramework.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3016286Z" type="Message">
+    <message>Adding directory (scratchbot\bin\es).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3016286Z" type="Message">
+    <message>Adding directory (scratchbot\bin\es).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3172588Z" type="Message">
+    <message>Adding file (scratchbot\bin\es\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3172588Z" type="Message">
+    <message>Adding file (scratchbot\bin\es\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3172588Z" type="Message">
+    <message>Adding file (scratchbot\bin\es\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3172588Z" type="Message">
+    <message>Adding file (scratchbot\bin\es\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3172588Z" type="Message">
+    <message>Adding file (scratchbot\bin\es\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3172588Z" type="Message">
+    <message>Adding file (scratchbot\bin\es\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3328756Z" type="Message">
+    <message>Adding file (scratchbot\bin\es\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3328756Z" type="Message">
+    <message>Adding file (scratchbot\bin\es\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3485049Z" type="Message">
+    <message>Adding file (scratchbot\bin\es\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3485049Z" type="Message">
+    <message>Adding file (scratchbot\bin\es\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3641353Z" type="Message">
+    <message>Adding directory (scratchbot\bin\fa).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3641353Z" type="Message">
+    <message>Adding directory (scratchbot\bin\fa).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3641353Z" type="Message">
+    <message>Adding file (scratchbot\bin\fa\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3641353Z" type="Message">
+    <message>Adding file (scratchbot\bin\fa\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3797657Z" type="Message">
+    <message>Adding directory (scratchbot\bin\fr).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3797657Z" type="Message">
+    <message>Adding directory (scratchbot\bin\fr).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3953765Z" type="Message">
+    <message>Adding file (scratchbot\bin\fr\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3953765Z" type="Message">
+    <message>Adding file (scratchbot\bin\fr\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3953765Z" type="Message">
+    <message>Adding file (scratchbot\bin\fr\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.3953765Z" type="Message">
+    <message>Adding file (scratchbot\bin\fr\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4110016Z" type="Message">
+    <message>Adding file (scratchbot\bin\fr\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4110016Z" type="Message">
+    <message>Adding file (scratchbot\bin\fr\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4266279Z" type="Message">
+    <message>Adding file (scratchbot\bin\fr\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4266279Z" type="Message">
+    <message>Adding file (scratchbot\bin\fr\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4266279Z" type="Message">
+    <message>Adding file (scratchbot\bin\fr\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4266279Z" type="Message">
+    <message>Adding file (scratchbot\bin\fr\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4422522Z" type="Message">
+    <message>Adding directory (scratchbot\bin\it).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4422522Z" type="Message">
+    <message>Adding directory (scratchbot\bin\it).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4578822Z" type="Message">
+    <message>Adding file (scratchbot\bin\it\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4578822Z" type="Message">
+    <message>Adding file (scratchbot\bin\it\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4578822Z" type="Message">
+    <message>Adding file (scratchbot\bin\it\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4578822Z" type="Message">
+    <message>Adding file (scratchbot\bin\it\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4735022Z" type="Message">
+    <message>Adding file (scratchbot\bin\it\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4735022Z" type="Message">
+    <message>Adding file (scratchbot\bin\it\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4735022Z" type="Message">
+    <message>Adding file (scratchbot\bin\it\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4735022Z" type="Message">
+    <message>Adding file (scratchbot\bin\it\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4891257Z" type="Message">
+    <message>Adding file (scratchbot\bin\it\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.4891257Z" type="Message">
+    <message>Adding file (scratchbot\bin\it\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.504765Z" type="Message">
+    <message>Adding directory (scratchbot\bin\ja).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.504765Z" type="Message">
+    <message>Adding directory (scratchbot\bin\ja).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.504765Z" type="Message">
+    <message>Adding file (scratchbot\bin\ja\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.504765Z" type="Message">
+    <message>Adding file (scratchbot\bin\ja\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5203816Z" type="Message">
+    <message>Adding file (scratchbot\bin\ja\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5203816Z" type="Message">
+    <message>Adding file (scratchbot\bin\ja\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5203816Z" type="Message">
+    <message>Adding file (scratchbot\bin\ja\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5203816Z" type="Message">
+    <message>Adding file (scratchbot\bin\ja\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5360069Z" type="Message">
+    <message>Adding file (scratchbot\bin\ja\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5360069Z" type="Message">
+    <message>Adding file (scratchbot\bin\ja\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5516314Z" type="Message">
+    <message>Adding file (scratchbot\bin\ja\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5516314Z" type="Message">
+    <message>Adding file (scratchbot\bin\ja\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5516314Z" type="Message">
+    <message>Adding directory (scratchbot\bin\ko).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5516314Z" type="Message">
+    <message>Adding directory (scratchbot\bin\ko).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5672517Z" type="Message">
+    <message>Adding file (scratchbot\bin\ko\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5672517Z" type="Message">
+    <message>Adding file (scratchbot\bin\ko\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5672517Z" type="Message">
+    <message>Adding file (scratchbot\bin\ko\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5672517Z" type="Message">
+    <message>Adding file (scratchbot\bin\ko\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5828762Z" type="Message">
+    <message>Adding file (scratchbot\bin\ko\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5828762Z" type="Message">
+    <message>Adding file (scratchbot\bin\ko\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5828762Z" type="Message">
+    <message>Adding file (scratchbot\bin\ko\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5828762Z" type="Message">
+    <message>Adding file (scratchbot\bin\ko\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5985012Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Azure.Documents.Client.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.5985012Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Azure.Documents.Client.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.6453781Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Azure.Documents.Client.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.6453781Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Azure.Documents.Client.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.6766302Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Azure.Documents.ServiceInterop.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.6766302Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Azure.Documents.ServiceInterop.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.7547656Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Azure.KeyVault.Core.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.7547656Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Azure.KeyVault.Core.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.770419Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Azure.KeyVault.Core.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.770419Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Azure.KeyVault.Core.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.770419Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.Autofac.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.770419Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.Autofac.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.770419Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.Autofac.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.770419Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.Autofac.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.770419Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.Azure.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.770419Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.Azure.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.7860096Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.Azure.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.7860096Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.Azure.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.7860096Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.7860096Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8172549Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.History.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8172549Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.History.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8172549Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.History.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8172549Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.History.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8328785Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8328785Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Builder.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8328785Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Connector.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8328785Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Connector.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8485083Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Connector.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8485083Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Bot.Connector.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8641306Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.8641306Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.879759Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.879759Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.879759Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.Edm.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.879759Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.Edm.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.9110132Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.Edm.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.9110132Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.Edm.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.9266313Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.OData.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.9266313Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.OData.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.9891463Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.OData.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:33.9891463Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.OData.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.1453812Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.Services.Client.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.1453812Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.Services.Client.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.1922622Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.Services.Client.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.1922622Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Data.Services.Client.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2235357Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Logging.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2235357Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Logging.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2235357Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Logging.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2235357Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Logging.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2391314Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2391314Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2547558Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2547558Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2547558Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocols.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2547558Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocols.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2860151Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2860151Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2860151Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.2860151Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3016334Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocols.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3016334Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Protocols.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3016334Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Tokens.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3016334Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Tokens.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3172615Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Tokens.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3172615Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.IdentityModel.Tokens.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3172615Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Rest.ClientRuntime.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3172615Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.Rest.ClientRuntime.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3328868Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.WindowsAzure.Configuration.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3328868Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.WindowsAzure.Configuration.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3328868Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.WindowsAzure.Configuration.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3328868Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.WindowsAzure.Configuration.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3485107Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.WindowsAzure.Storage.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3485107Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.WindowsAzure.Storage.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3953869Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.WindowsAzure.Storage.pdb).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.3953869Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.WindowsAzure.Storage.pdb).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.4891451Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.WindowsAzure.Storage.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.4891451Z" type="Message">
+    <message>Adding file (scratchbot\bin\Microsoft.WindowsAzure.Storage.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.5360137Z" type="Message">
+    <message>Adding file (scratchbot\bin\Newtonsoft.Json.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.5360137Z" type="Message">
+    <message>Adding file (scratchbot\bin\Newtonsoft.Json.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.567268Z" type="Message">
+    <message>Adding file (scratchbot\bin\Newtonsoft.Json.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.567268Z" type="Message">
+    <message>Adding file (scratchbot\bin\Newtonsoft.Json.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.5828835Z" type="Message">
+    <message>Adding directory (scratchbot\bin\nl).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.5828835Z" type="Message">
+    <message>Adding directory (scratchbot\bin\nl).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.5828835Z" type="Message">
+    <message>Adding file (scratchbot\bin\nl\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.5828835Z" type="Message">
+    <message>Adding file (scratchbot\bin\nl\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.5985084Z" type="Message">
+    <message>Adding directory (scratchbot\bin\pt-BR).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.5985084Z" type="Message">
+    <message>Adding directory (scratchbot\bin\pt-BR).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.5985084Z" type="Message">
+    <message>Adding file (scratchbot\bin\pt-BR\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.5985084Z" type="Message">
+    <message>Adding file (scratchbot\bin\pt-BR\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6141332Z" type="Message">
+    <message>Adding directory (scratchbot\bin\roslyn).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6141332Z" type="Message">
+    <message>Adding directory (scratchbot\bin\roslyn).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6141332Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\csc.exe).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6141332Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\csc.exe).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6297628Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\csc.exe.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6297628Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\csc.exe.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6297628Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\csc.rsp).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6297628Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\csc.rsp).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6297628Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\csi.exe).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6297628Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\csi.exe).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6297628Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\csi.rsp).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6297628Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\csi.rsp).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6453876Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6453876Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6453876Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.6453876Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.8485139Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.8485139Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.8641381Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CodeAnalysis.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.8641381Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CodeAnalysis.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.9578848Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.9578848Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.973539Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:34.973539Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.207894Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CSharp.Core.targets).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.207894Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.CSharp.Core.targets).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.207894Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.207894Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.2860093Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.2860093Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3328922Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.VisualBasic.Core.targets).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3328922Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\Microsoft.VisualBasic.Core.targets).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3328922Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.AppContext.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3328922Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.AppContext.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3485141Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.Collections.Immutable.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3485141Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.Collections.Immutable.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3641412Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.Diagnostics.StackTrace.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3641412Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.Diagnostics.StackTrace.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3641412Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.IO.FileSystem.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3641412Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.IO.FileSystem.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3641412Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.IO.FileSystem.Primitives.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.3641412Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.IO.FileSystem.Primitives.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4266409Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.Reflection.Metadata.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4266409Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\System.Reflection.Metadata.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4422601Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\vbc.exe).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4422601Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\vbc.exe).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4578855Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\vbc.exe.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4578855Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\vbc.exe.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4578855Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\vbc.rsp).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4578855Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\vbc.rsp).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4578855Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\VBCSCompiler.exe).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4578855Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\VBCSCompiler.exe).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4735094Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\VBCSCompiler.exe.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4735094Z" type="Message">
+    <message>Adding file (scratchbot\bin\roslyn\VBCSCompiler.exe.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4735094Z" type="Message">
+    <message>Adding directory (scratchbot\bin\ru).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4735094Z" type="Message">
+    <message>Adding directory (scratchbot\bin\ru).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4735094Z" type="Message">
+    <message>Adding file (scratchbot\bin\ru\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.4735094Z" type="Message">
+    <message>Adding file (scratchbot\bin\ru\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.489135Z" type="Message">
+    <message>Adding file (scratchbot\bin\ru\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.489135Z" type="Message">
+    <message>Adding file (scratchbot\bin\ru\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5047624Z" type="Message">
+    <message>Adding file (scratchbot\bin\ru\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5047624Z" type="Message">
+    <message>Adding file (scratchbot\bin\ru\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5047624Z" type="Message">
+    <message>Adding file (scratchbot\bin\ru\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5047624Z" type="Message">
+    <message>Adding file (scratchbot\bin\ru\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5206635Z" type="Message">
+    <message>Adding file (scratchbot\bin\ru\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5206635Z" type="Message">
+    <message>Adding file (scratchbot\bin\ru\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5516391Z" type="Message">
+    <message>Adding file (scratchbot\bin\SimpleEchoBot.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5516391Z" type="Message">
+    <message>Adding file (scratchbot\bin\SimpleEchoBot.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5672795Z" type="Message">
+    <message>Adding file (scratchbot\bin\SimpleEchoBot.dll.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5672795Z" type="Message">
+    <message>Adding file (scratchbot\bin\SimpleEchoBot.dll.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5828847Z" type="Message">
+    <message>Adding file (scratchbot\bin\SimpleEchoBot.pdb).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5828847Z" type="Message">
+    <message>Adding file (scratchbot\bin\SimpleEchoBot.pdb).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5985089Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.IdentityModel.Tokens.Jwt.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5985089Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.IdentityModel.Tokens.Jwt.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5985089Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.IdentityModel.Tokens.Jwt.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5985089Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.IdentityModel.Tokens.Jwt.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5985089Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Net.Http.Formatting.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.5985089Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Net.Http.Formatting.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6141367Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Net.Http.Formatting.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6141367Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Net.Http.Formatting.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6297592Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Spatial.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6297592Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Spatial.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6297592Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Spatial.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6297592Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Spatial.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6453834Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Web.Http.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6453834Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Web.Http.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6610085Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Web.Http.WebHost.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6610085Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Web.Http.WebHost.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6766341Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Web.Http.WebHost.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6766341Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Web.Http.WebHost.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6766341Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Web.Http.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.6766341Z" type="Message">
+    <message>Adding file (scratchbot\bin\System.Web.Http.xml).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7078839Z" type="Message">
+    <message>Adding directory (scratchbot\bin\zh-hans).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7078839Z" type="Message">
+    <message>Adding directory (scratchbot\bin\zh-hans).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7078839Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7078839Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7235088Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-hans\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7235088Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-hans\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7235088Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-hans\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7235088Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-hans\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7391342Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-hans\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7391342Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-hans\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7391342Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-hans\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7391342Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-hans\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7547589Z" type="Message">
+    <message>Adding directory (scratchbot\bin\zh-Hant).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7547589Z" type="Message">
+    <message>Adding directory (scratchbot\bin\zh-Hant).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7704331Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-Hant\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7704331Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-Hant\Microsoft.Data.Edm.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7704331Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-Hant\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7704331Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-Hant\Microsoft.Data.OData.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7860097Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7860097Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7860097Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-Hant\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7860097Z" type="Message">
+    <message>Adding file (scratchbot\bin\zh-Hant\System.Spatial.resources.dll).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7860097Z" type="Message">
+    <message>Adding file (scratchbot\build.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.7860097Z" type="Message">
+    <message>Adding file (scratchbot\build.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8028002Z" type="Message">
+    <message>Adding directory (scratchbot\Controllers).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8028002Z" type="Message">
+    <message>Adding directory (scratchbot\Controllers).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8329142Z" type="Message">
+    <message>Adding file (scratchbot\Controllers\MessagesController.cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8329142Z" type="Message">
+    <message>Adding file (scratchbot\Controllers\MessagesController.cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8329142Z" type="Message">
+    <message>Adding file (scratchbot\default.htm).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8329142Z" type="Message">
+    <message>Adding file (scratchbot\default.htm).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8329142Z" type="Message">
+    <message>Adding file (scratchbot\deploy.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8329142Z" type="Message">
+    <message>Adding file (scratchbot\deploy.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8485102Z" type="Message">
+    <message>Adding directory (scratchbot\Dialogs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8485102Z" type="Message">
+    <message>Adding directory (scratchbot\Dialogs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8485102Z" type="Message">
+    <message>Adding file (scratchbot\Dialogs\EchoDialog.cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8485102Z" type="Message">
+    <message>Adding file (scratchbot\Dialogs\EchoDialog.cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8485102Z" type="Message">
+    <message>Adding file (scratchbot\Global.asax).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8485102Z" type="Message">
+    <message>Adding file (scratchbot\Global.asax).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8485102Z" type="Message">
+    <message>Adding file (scratchbot\Global.asax.cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8485102Z" type="Message">
+    <message>Adding file (scratchbot\Global.asax.cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8797669Z" type="Message">
+    <message>Deleting file (scratchbot\hostingstart.html).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8797669Z" type="Message">
+    <message>Deleting file (scratchbot\hostingstart.html).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8797669Z" type="Message">
+    <message>Adding file (scratchbot\Microsoft.Bot.Sample.SimpleEchoBot.csproj).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8797669Z" type="Message">
+    <message>Adding file (scratchbot\Microsoft.Bot.Sample.SimpleEchoBot.csproj).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8797669Z" type="Message">
+    <message>Adding file (scratchbot\Microsoft.Bot.Sample.SimpleEchoBot.sln).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8797669Z" type="Message">
+    <message>Adding file (scratchbot\Microsoft.Bot.Sample.SimpleEchoBot.sln).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8953854Z" type="Message">
+    <message>Adding file (scratchbot\packages.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8953854Z" type="Message">
+    <message>Adding file (scratchbot\packages.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8953854Z" type="Message">
+    <message>Adding directory (scratchbot\PostDeployScripts).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8953854Z" type="Message">
+    <message>Adding directory (scratchbot\PostDeployScripts).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8953854Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\githubProject.json.template).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8953854Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\githubProject.json.template).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8953854Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\IncludeSources.targets).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.8953854Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\IncludeSources.targets).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9110104Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\prepareSrc.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9110104Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\prepareSrc.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9110104Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\publish.cmd.template).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9110104Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\publish.cmd.template).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9110104Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\publishProfile.xml.template).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9110104Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\publishProfile.xml.template).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9110104Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\publishSettings.xml.template).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9110104Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\publishSettings.xml.template).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9266411Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\runGulp.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9266411Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\runGulp.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9266411Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\setupGithubRemoteRepo.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9266411Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\setupGithubRemoteRepo.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9422629Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\setupVsoRemoteRepo.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9422629Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\setupVsoRemoteRepo.cmd).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9422629Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\vsoProject.json.template).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9422629Z" type="Message">
+    <message>Adding file (scratchbot\PostDeployScripts\vsoProject.json.template).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9578908Z" type="Message">
+    <message>Adding directory (scratchbot\Properties).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9578908Z" type="Message">
+    <message>Adding directory (scratchbot\Properties).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9578908Z" type="Message">
+    <message>Adding file (scratchbot\Properties\AssemblyInfo.cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9578908Z" type="Message">
+    <message>Adding file (scratchbot\Properties\AssemblyInfo.cs).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9735101Z" type="Message">
+    <message>Adding file (scratchbot\readme.md).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9735101Z" type="Message">
+    <message>Adding file (scratchbot\readme.md).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9735101Z" type="Message">
+    <message>Adding file (scratchbot\Web.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.9735101Z" type="Message">
+    <message>Adding file (scratchbot\Web.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.989135Z" type="Message">
+    <message>Adding file (scratchbot\Web.Debug.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.989135Z" type="Message">
+    <message>Adding file (scratchbot\Web.Debug.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.989135Z" type="Message">
+    <message>Adding file (scratchbot\Web.Release.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:35.989135Z" type="Message">
+    <message>Adding file (scratchbot\Web.Release.config).</message>
+  </entry>
+  <entry time="2018-03-02T19:32:36.0203928Z" type="Message">
+    <message>Total Changes: 189 (188 added, 1 deleted, 0 updated, 0 parameters changed, 54997023 bytes copied)</message>
+  </entry>
+  <entry time="2018-03-02T19:32:36.0360165Z" type="Message">
+    <message>[Verbose] Skip function trigger and logicapp sync because function is not enabled.</message>
+  </entry>
+  <entry time="2018-03-02T19:32:36.0360165Z" type="Message">
+    <message>[Verbose] AutoSwap is not enabled</message>
+  </entry>
+</entries>
