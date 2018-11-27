@@ -36,11 +36,6 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
                     "Didn't get that!",
                     promptStyle: PromptStyle.Auto);
             }
-            else if (trimmedText == "increment")
-            {
-                await context.PostAsync($"{this.count++}: I say you said {message.Text}");
-                context.Wait(MessageReceivedAsync);
-            }
             else if(trimmedText.StartsWith("lookup"))
             {
                 var teamId = trimmedText.Replace("lookup", "").Trim();
@@ -78,6 +73,11 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
                     await context.PostAsync($"Details for team {teamId}: {response.Content.ReadAsStringAsync().Result}");
                     context.Wait(MessageReceivedAsync);
                 }
+            }
+            else
+            {
+                await context.PostAsync($"{this.count++}: I say you said {message.Text}");
+                context.Wait(MessageReceivedAsync);
             }
         }
 
