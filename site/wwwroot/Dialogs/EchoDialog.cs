@@ -176,7 +176,7 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
                     {
                         var choice = trimmedText.Substring("choice".Length).Trim();
                         var choiceSegments = choice.Split(';').ToList();
-                        var responseOptions = new[] { "option 1", "option 2", "option 3" };
+                        var options = new[] { "option 1", "option 2", "option 3" };
 
                         var choiceTitle = choiceSegments[0].Trim();
                         choiceSegments.RemoveAt(0);
@@ -195,7 +195,7 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
 
                         var replyActivity = incomingActivity.CreateReply("Your choice has been requested for the following item");
                         replyActivity.Attachments = new List<Attachment>();
-                        var choiceResponseData = new AdaptiveOptionsResponseData { ResponseOptions = responseOptions };
+                        var choiceResponseData = new AdaptiveOptionsResponseData { Options = options };
 
                         var adaptiveCard = AdaptiveCardBuilder.BuildOptionsRequestCard(
                             cultureInfo: cultureInfo,

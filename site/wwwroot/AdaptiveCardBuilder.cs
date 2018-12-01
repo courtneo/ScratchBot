@@ -65,9 +65,9 @@
             this AdaptiveCard adaptiveCard,
             AdaptiveOptionsResponseData optionChoiceData)
         {
-            var responseOptions = optionChoiceData.ResponseOptions;
+            var options = optionChoiceData.Options;
 
-            foreach (var responseOption in responseOptions)
+            foreach (var option in options)
             {
                 var adaptiveCardForOption = BuildEmptyCard()
                     .WithText("Comments");
@@ -80,7 +80,7 @@
                     MaxLength = 1000
                 });
 
-                optionChoiceData.ResponseOption = responseOption;
+                optionChoiceData.SelectedOption = option;
 
                 adaptiveCardForOption.Actions.Add(new AdaptiveSubmitAction
                 {
@@ -90,7 +90,7 @@
 
                 adaptiveCard.Actions.Add(new AdaptiveShowCardAction
                 {
-                    Title = responseOption,
+                    Title = option,
                     Card = adaptiveCardForOption
                 });
             }
@@ -145,7 +145,7 @@
 
             adaptiveCard.Body.Add(new AdaptiveTextBlock
             {
-                Text = string.Format(cultureInfo, "Response \"{0}\" recorded", optionResponseData.ResponseOption),
+                Text = string.Format(cultureInfo, "Response \"{0}\" recorded", optionResponseData.SelectedOption),
                 Size = AdaptiveTextSize.Large,
                 Weight = AdaptiveTextWeight.Bolder
             });
@@ -305,7 +305,7 @@
                 ApprovalTitle = approvalTitle,
                 ApprovalLink = approvalLink,
                 ApprovalName = approvalName,
-                ResponseOptions = approvalOptions
+                Options = approvalOptions
             };
 
             return BuildOptionsRequestCard(

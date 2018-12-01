@@ -193,7 +193,9 @@
   <ItemGroup>
     <Compile Include="AdaptiveActionData.cs" />
     <Compile Include="AdaptiveActionType.cs" />
+    <Compile Include="AdaptiveApprovalResponseData.cs" />
     <Compile Include="AdaptiveCardBuilder.cs" />
+    <Compile Include="AdaptiveOptionsResponseData.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Dialogs\EchoDialog.cs" />
