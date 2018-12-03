@@ -50,12 +50,79 @@
             return adaptiveCard;
         }
 
-        private static AdaptiveCard WithText(this AdaptiveCard adaptiveCard, string text)
+        private static AdaptiveCard WithText(
+            this AdaptiveCard adaptiveCard,
+            string text,
+            AdaptiveTextSize textSize = default(AdaptiveTextSize),
+            AdaptiveTextWeight textWeight = default(AdaptiveTextWeight),
+            bool wrap = true)
         {
             adaptiveCard.Body.Add(new AdaptiveTextBlock
             {
                 Text = text,
-                Wrap = true
+                Wrap = wrap,
+                Size = textSize,
+                Weight = textWeight
+            });
+
+            return adaptiveCard;
+        }
+
+        private static AdaptiveCard WithFactset(this AdaptiveCard adaptiveCard, AdaptiveFactSet adaptiveFactSet)
+        {
+            adaptiveCard.Body.Add(adaptiveFactSet);
+            return adaptiveCard;
+        }
+
+        private static AdaptiveCard WithFact(this AdaptiveCard adaptiveCard, string factTitle, string factValue)
+        {
+            var adaptiveFactSet = adaptiveCard.Body.FindLast(cardElement => cardElement.GetType() == typeof(AdaptiveFactSet)) as AdaptiveFactSet;
+
+            if (adaptiveFactSet == null)
+            {
+                adaptiveFactSet = new AdaptiveFactSet();
+                adaptiveCard.Body.Add(adaptiveFactSet);
+            }
+
+            adaptiveFactSet.Facts.Add(new AdaptiveFact
+            {
+                Title = factTitle,
+                Value = factValue
+            });
+
+            return adaptiveCard;
+        }
+
+        private static AdaptiveCard WithTextInput(this AdaptiveCard adaptiveCard, string id, string placeholder, bool isMultiline, int maxLength)
+        {
+            adaptiveCard.Body.Add(new AdaptiveTextInput
+            {
+                Id = id,
+                Placeholder = placeholder,
+                IsMultiline = isMultiline,
+                MaxLength = maxLength
+            });
+
+            return adaptiveCard;
+        }
+
+        private static AdaptiveCard WithSubmitAction(this AdaptiveCard adaptiveCard, string title, string dataJson)
+        {
+            adaptiveCard.Actions.Add(new AdaptiveSubmitAction
+            {
+                Title = title,
+                DataJson = dataJson
+            });
+
+            return adaptiveCard;
+        }
+
+        private static AdaptiveCard WithShowCardAction(this AdaptiveCard adaptiveCard, string title, AdaptiveCard adaptiveCardToShow)
+        {
+            adaptiveCard.Actions.Add(new AdaptiveShowCardAction
+            {
+                Title = title,
+                Card = adaptiveCardToShow
             });
 
             return adaptiveCard;
@@ -69,30 +136,18 @@
 
             foreach (var option in options)
             {
-                var adaptiveCardForOption = BuildEmptyCard()
-                    .WithText("Comments");
-
-                adaptiveCardForOption.Body.Add(new AdaptiveTextInput
-                {
-                    Id = "comments",
-                    Placeholder = "Enter comments",
-                    IsMultiline = true,
-                    MaxLength = 1000
-                });
-
                 optionChoiceData.SelectedOption = option;
 
-                adaptiveCardForOption.Actions.Add(new AdaptiveSubmitAction
-                {
-                    Title = "Submit",
-                    DataJson = optionChoiceData.Serialize()
-                });
-
-                adaptiveCard.Actions.Add(new AdaptiveShowCardAction
-                {
-                    Title = option,
-                    Card = adaptiveCardForOption
-                });
+                adaptiveCard = adaptiveCard.WithShowCardAction(
+                    title: option,
+                    adaptiveCardToShow: BuildEmptyCard()
+                        .WithText("Comments")
+                        .WithTextInput(
+                            id: "comments",
+                            placeholder: "Enter comments",
+                            isMultiline: true,
+                            maxLength: 1000)
+                        .WithSubmitAction(title: "Submit", dataJson: optionChoiceData.Serialize()));
             }
 
             return adaptiveCard;
@@ -133,56 +188,20 @@
         /// <param name="optionResponseData">The option response data.</param>
         /// <param name="responderName">Name of the responder.</param>
         /// <param name="responseDate">Optional date of the response.</param>
-        /// <param name="extraFact">An optional extra fact to add, if specified.</param>
         public static AdaptiveCard BuildOptionsResponseCard(
             CultureInfo cultureInfo,
             AdaptiveOptionsResponseData optionResponseData,
             string responderName = null,
-            DateTime? responseDate = null,
-            AdaptiveFact extraFact = null)
+            DateTime? responseDate = null)
         {
-            var adaptiveCard = BuildEmptyCard();
-
-            adaptiveCard.Body.Add(new AdaptiveTextBlock
-            {
-                Text = string.Format(cultureInfo, "Response \"{0}\" recorded", optionResponseData.SelectedOption),
-                Size = AdaptiveTextSize.Large,
-                Weight = AdaptiveTextWeight.Bolder
-            });
-
-            var factSet = new AdaptiveFactSet();
-
-            if (responseDate != null)
-            {
-                factSet.Facts.Add(new AdaptiveFact
-                {
-                    Title = "On", // "Response date"?
-                    Value = string.Format(cultureInfo, "{0:f} GMT", responseDate)
-                });
-            }
-
-            if (responderName != null)
-            {
-                factSet.Facts.Add(new AdaptiveFact
-                {
-                    Title = "By",
-                    Value = responderName
-                });
-            }
-
-            factSet.Facts.Add(new AdaptiveFact
-            {
-                Title = "Comments",
-                Value = optionResponseData.Comments
-            });
-
-            if (extraFact != null)
-            {
-                factSet.Facts.Add(extraFact);
-            }
-
-            adaptiveCard.Body.Add(factSet);
-            return adaptiveCard;
+            return BuildEmptyCard()
+                .WithText(
+                    text: string.Format(cultureInfo, "Response \"{0}\" recorded", optionResponseData.SelectedOption),
+                    textSize: AdaptiveTextSize.Large,
+                    textWeight: AdaptiveTextWeight.Bolder)
+                .WithFact(factTitle: "On", factValue: string.Format(cultureInfo, "{0:f} GMT", responseDate.Value.ToUniversalTime())) // .. factTitle "Response date"?
+                .WithFact(factTitle: "By", factValue: responderName)
+                .WithFact(factTitle: "Comments", factValue: optionResponseData.Comments);
         }
 
         /// <summary>
@@ -198,17 +217,16 @@
             DateTime responseDate,
             AdaptiveApprovalResponseData approvalResponseData)
         {
-            var extraFact = string.IsNullOrEmpty(approvalResponseData.ApprovalLink)
-                ? null
-                : new AdaptiveFact
-                    {
-                        Title = "Approval",
-                        Value = BuildMarkdownForLink(
-                            approvalResponseData.ApprovalTitle,
-                            approvalResponseData.ApprovalLink)
-                    };
+            var adaptiveCard = BuildOptionsResponseCard(cultureInfo, approvalResponseData, responderName, responseDate);
 
-            return BuildOptionsResponseCard(cultureInfo, approvalResponseData, responderName, responseDate, extraFact);
+            return string.IsNullOrEmpty(approvalResponseData.ApprovalLink)
+                ? adaptiveCard
+                : adaptiveCard
+                    .WithFact(
+                        factTitle: "Approval",
+                        factValue: BuildMarkdownForLink(
+                            approvalResponseData.ApprovalTitle,
+                            approvalResponseData.ApprovalLink));
         }
 
         /// <summary>
@@ -232,44 +250,13 @@
             string choiceItemLink,
             AdaptiveOptionsResponseData choiceResponseData)
         {
-            var adaptiveCard = BuildEmptyCard()
-                .WithTitle(choiceTitle);
-
-            var factSet = new AdaptiveFactSet();
-
-            factSet.Facts.Add(new AdaptiveFact
-            {
-                Title = "Created",
-                Value = string.Format(cultureInfo, "{0:f} GMT", choiceCreationDate)
-            });
-
-            factSet.Facts.Add(new AdaptiveFact
-            {
-                Title = "By",
-                Value = requestorName
-            });
-
-            factSet.Facts.Add(new AdaptiveFact
-            {
-                Title = "Details",
-                Value = choiceDetails
-            });
-
-            if (!string.IsNullOrEmpty(choiceItemLink))
-            {
-                factSet.Facts.Add(new AdaptiveFact
-                {
-                    Title = "Link",
-                    Value = string.Format(
-                        CultureInfo.InvariantCulture,
-                        "[{0}]({1})",
-                        string.IsNullOrWhiteSpace(choiceItemLinkDescription) ? choiceItemLink : choiceItemLinkDescription,
-                        choiceItemLink)
-                });
-            }
-
-            adaptiveCard.Body.Add(factSet);
-            return adaptiveCard.WithResponseOptions(choiceResponseData);
+            return BuildEmptyCard()
+                .WithTitle(choiceTitle)
+                .WithFact(factTitle: "Created", factValue: string.Format(cultureInfo, "{0:f} GMT", choiceCreationDate.ToUniversalTime()))
+                .WithFact(factTitle: "By", factValue: requestorName)
+                .WithFact(factTitle: "Details", factValue: choiceDetails)
+                .WithFact(factTitle: "Link", factValue: BuildMarkdownForLink(linkTitle: choiceItemLinkDescription, linkUrl: choiceItemLink))
+                .WithResponseOptions(choiceResponseData);
         }
 
         /// <summary>
