@@ -1,12 +1,12 @@
 using System.Threading.Tasks;
 using System.Web.Http;
-
-using Microsoft.Bot.Connector;
-using Microsoft.Bot.Builder.Dialogs;
 using System.Web.Http.Description;
 using System.Net.Http;
+using Microsoft.Bot.Connector;
+using Microsoft.Bot.Builder.Dialogs;
+using SimpleEchoBot.Dialogs;
 
-namespace Microsoft.Bot.Sample.SimpleEchoBot
+namespace SimpleEchoBot.Controllers
 {
     [BotAuthentication]
     public class MessagesController : ApiController

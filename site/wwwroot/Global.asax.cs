@@ -1,16 +1,36 @@
 using Autofac;
 using System.Web.Http;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Reflection;
 using Microsoft.Bot.Builder.Azure;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Dialogs.Internals;
 using Microsoft.Bot.Connector;
+using Internal.Azure.Tests.ProcessSimple.Common;
 
 namespace SimpleEchoBot
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
+        private AppConfigSettingScope appConfigSettingScope;
+
+        public WebApiApplication()
+        {
+            this.appConfigSettingScope = new AppConfigSettingScope(new Dictionary<string, string>());
+        }
+
+        new public void Dispose()
+        {
+            base.Dispose();
+
+            if (this.appConfigSettingScope != null)
+            {
+                this.appConfigSettingScope.Dispose();
+                this.appConfigSettingScope = null;
+            }
+        }
+
         protected void Application_Start()
         {
             // Bot Storage: This is a great spot to register the private state storage for your bot. 

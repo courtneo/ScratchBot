@@ -1,4 +1,4 @@
-using Microsoft.Azure.ProcessSimple.Data.Components.AdaptiveCards;
+extern alias FlowData;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using Newtonsoft.Json;
@@ -11,14 +11,18 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using AdaptiveCards;
+using FlowData::Microsoft.Azure.ProcessSimple.Data.Entities;
+using FlowData::Microsoft.Azure.ProcessSimple.Data.Components.AdaptiveCards;
+using AdaptiveActionData = FlowData::Microsoft.Azure.ProcessSimple.Data.Components.AdaptiveCards.AdaptiveActionData;
 
-namespace Microsoft.Bot.Sample.SimpleEchoBot
+namespace SimpleEchoBot.Dialogs
 {
     [Serializable]
     public class EchoDialog : IDialog<object>
     {
-        protected int count = 1;
+        private int count = 1;
+
+        public static Activity LastSeenActivity  { get; set; }
 
         public async Task StartAsync(IDialogContext context)
         {
@@ -31,55 +35,14 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
             {
                 var message = await argument;
                 var incomingActivity = (message as Activity);
+                var teamsFlowbotManager = this.GetTeamsFlowbotManager(context, incomingActivity);
+                LastSeenActivity = incomingActivity;
 
                 if (message.Text == null)
                 {
                     var adaptiveActionData = AdaptiveActionData.Deserialize(incomingActivity.Value.ToString());
-
-                    if (adaptiveActionData.ActionType == AdaptiveActionType.OptionsResponse)
-                    {
-                        string responderName = incomingActivity.From.Name;
-                        var cultureInfo = CultureInfo.CurrentCulture;
-                        var adaptiveCard = AdaptiveCardBuilder.BuildOptionsResponseCard(
-                            cultureInfo: cultureInfo,
-                            optionResponseData: adaptiveActionData as AdaptiveOptionsResponseData,
-                            responseDate: DateTime.UtcNow,
-                            responderName: responderName);
-
-                        var replyActivity = incomingActivity.CreateReply();
-                        replyActivity.Attachments = new List<Attachment>();
-
-                        var attachment = new Attachment
-                        {
-                            ContentType = AdaptiveCard.ContentType,
-                            Content = adaptiveCard
-                        };
-
-                        replyActivity.Attachments.Add(attachment);
-
-                        var connectorClient = new ConnectorClient(new Uri(incomingActivity.ServiceUrl));
-                        await connectorClient.Conversations.UpdateActivityAsync(incomingActivity.Conversation.Id, incomingActivity.ReplyToId, replyActivity);
-                    }
-                    else if (adaptiveActionData.ActionType == AdaptiveActionType.ApprovalResponse)
-                    {
-                        string responderName = incomingActivity.From.Name;
-                        var cultureInfo = CultureInfo.CurrentCulture;
-                        var adaptiveCard = AdaptiveCardBuilder.BuildApprovalResponseCard(cultureInfo, responderName, DateTime.UtcNow, adaptiveActionData as AdaptiveApprovalResponseData);
-
-                        var replyActivity = incomingActivity.CreateReply();
-                        replyActivity.Attachments = new List<Attachment>();
-
-                        var attachment = new Attachment
-                        {
-                            ContentType = AdaptiveCard.ContentType,
-                            Content = adaptiveCard
-                        };
-
-                        replyActivity.Attachments.Add(attachment);
-
-                        var connectorClient = new ConnectorClient(new Uri(incomingActivity.ServiceUrl));
-                        await connectorClient.Conversations.UpdateActivityAsync(incomingActivity.Conversation.Id, incomingActivity.ReplyToId, replyActivity);
-                    }
+                    await teamsFlowbotManager.ReceiveAdaptiveAction(adaptiveActionData, incomingActivity.From.ToBotChannelAccount(), incomingActivity.From.AadObjectId);
+                    context.Wait(MessageReceivedAsync);
                 }
                 else
                 {
@@ -137,40 +100,16 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
                         var notification = trimmedText.Substring("notification".Length).Trim();
                         var notificationSegments = notification.Split(';').ToList();
 
-                        var notificationTitle = notificationSegments[0].Trim();
-                        notificationSegments.RemoveAt(0);
-
-                        var notificationBody = notificationSegments.Count > 0 ? notificationSegments[0].Trim() : "";
-                        notificationSegments.RemoveAt(0);
-
-                        var notificationItemLinkTitle = notificationSegments.Count > 0 ? notificationSegments[0].Trim() : "";
-                        notificationSegments.RemoveAt(0);
-
-                        var notificationItemLinkUrl = notificationSegments.Count > 0 ? notificationSegments[0].Trim() : "";
-                        notificationSegments.RemoveAt(0);
-
-                        var notificationCreationDate = DateTime.Now.AddHours(-1);
-                        var cultureInfo = CultureInfo.CurrentCulture;
-
-                        var replyActivity = incomingActivity.CreateReply("The following notification has been issued");
-                        replyActivity.Attachments = new List<Attachment>();
-
-                        var adaptiveCard = AdaptiveCardBuilder.BuildNotificationCard(
-                            cultureInfo: cultureInfo,
-                            notificationTitle: notificationTitle,
-                            notificationBody: notificationBody,
-                            notificationItemLinkTitle: notificationItemLinkTitle,
-                            notificationItemLinkUrl: notificationItemLinkUrl);
-
-                        var attachment = new Attachment
+                        var notificationRequestData = new NotificationRequest
                         {
-                            ContentType = AdaptiveCard.ContentType,
-                            Content = adaptiveCard
+                            Title = PopFrom(notificationSegments),
+                            Details = PopFrom(notificationSegments),
+                            ItemLinkDescription = PopFrom(notificationSegments),
+                            ItemLink = PopFrom(notificationSegments)
                         };
 
-                        replyActivity.Attachments.Add(attachment);
-                        await context.PostAsync(replyActivity);
-
+                        await teamsFlowbotManager.SendNotification(notificationRequestData);
+                        context.Wait(MessageReceivedAsync);
                     }
                     else if (trimmedText.StartsWith("choice"))
                     {
@@ -178,72 +117,35 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
                         var choiceSegments = choice.Split(';').ToList();
                         var options = new[] { "option 1", "option 2", "option 3" };
 
-                        var choiceTitle = choiceSegments[0].Trim();
-                        choiceSegments.RemoveAt(0);
-
-                        var choiceDetails = choiceSegments.Count > 0 ? choiceSegments[0].Trim() : "";
-                        choiceSegments.RemoveAt(0);
-
-                        var choiceItemLinkDescription = choiceSegments.Count > 0 ? choiceSegments[0].Trim() : "";
-                        choiceSegments.RemoveAt(0);
-
-                        var choiceItemLink = choiceSegments.Count > 0 ? choiceSegments[0].Trim() : "";
-                        choiceSegments.RemoveAt(0);
-
-                        var choiceCreationDate = DateTime.Now.AddHours(-1);
-                        var cultureInfo = CultureInfo.CurrentCulture;
-
-                        var replyActivity = incomingActivity.CreateReply("Your choice has been requested for the following item");
-                        replyActivity.Attachments = new List<Attachment>();
-                        var choiceResponseData = new AdaptiveOptionsResponseData { Options = options };
-
-                        var adaptiveCard = AdaptiveCardBuilder.BuildOptionsRequestCard(
-                            cultureInfo: cultureInfo,
-                            choiceTitle: choiceTitle,
-                            choiceCreationDate: choiceCreationDate,
-                            requestorName: incomingActivity.From.Name,
-                            choiceDetails: choiceDetails,
-                            choiceItemLinkDescription: choiceItemLinkDescription,
-                            choiceItemLink: choiceItemLink,
-                            choiceResponseData: choiceResponseData);
-
-                        var attachment = new Attachment
+                        var optionsRequestData = new MessageWithOptionsRequest
                         {
-                            ContentType = AdaptiveCard.ContentType,
-                            Content = adaptiveCard
+                            Title = PopFrom(choiceSegments),
+                            Recipients = incomingActivity.From.Name,
+                            Details = PopFrom(choiceSegments),
+                            ItemLinkDescription = PopFrom(choiceSegments),
+                            ItemLink = PopFrom(choiceSegments),
+                            Options = options
                         };
 
-                        replyActivity.Attachments.Add(attachment);
-                        await context.PostAsync(replyActivity);
+                        await teamsFlowbotManager.SendMessageWithOptions(optionsRequestData);
+                        context.Wait(MessageReceivedAsync);
                     }
                     else if (trimmedText.StartsWith("approval"))
                     {
                         var environment = Guid.NewGuid().ToString();
                         var approvalName = Guid.NewGuid().ToString();
+                        var approvalLink = "http://linkToApproval/inFlowPortal.com";
                         var approval = trimmedText.Substring("approval".Length).Trim();
                         var approvalSegments = approval.Split(';').ToList();
                         var approvalOptions = new[] { "option 1", "option 2", "option 3" };
 
-                        var approvalTitle = approvalSegments[0].Trim();
-                        approvalSegments.RemoveAt(0);
-
-                        var approvalDetails = approvalSegments.Count > 0 ? approvalSegments[0].Trim() : "";
-                        approvalSegments.RemoveAt(0);
-
-                        var approvalLink = approvalSegments.Count > 0 ? approvalSegments[0].Trim() : "";
-                        approvalSegments.RemoveAt(0);
-
-                        var approvalItemLinkDescription = approvalSegments.Count > 0 ? approvalSegments[0].Trim() : "";
-                        approvalSegments.RemoveAt(0);
-
-                        var approvalItemLink = approvalSegments.Count > 0 ? approvalSegments[0].Trim() : "";
-                        approvalSegments.RemoveAt(0);
+                        var approvalTitle = PopFrom(approvalSegments);
+                        var approvalDetails = PopFrom(approvalSegments);
+                        var approvalItemLinkDescription = PopFrom(approvalSegments);
+                        var approvalItemLink = PopFrom(approvalSegments);
 
                         var approvalCreationDate = DateTime.Now.AddHours(-1);
                         var cultureInfo = CultureInfo.CurrentCulture;
-
-                        var replyActivity = incomingActivity.CreateReply("Your approval has been requested for the following item");
-                        replyActivity.Attachments = new List<Attachment>();
 
                         var adaptiveCard = AdaptiveCardBuilder.BuildApprovalRequestCard(
                             cultureInfo: cultureInfo,
@@ -258,14 +160,8 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
                             approvalName: approvalName,
                             approvalOptions: approvalOptions);
 
-                        var attachment = new Attachment
-                        {
-                            ContentType = AdaptiveCard.ContentType,
-                            Content = adaptiveCard
-                        };
-
-                        replyActivity.Attachments.Add(attachment);
-                        await context.PostAsync(replyActivity);
+                        await teamsFlowbotManager.SendAdaptiveCard(adaptiveCard, "Your approval has been requested for the following item");
+                        context.Wait(MessageReceivedAsync);
                     }
                     else
                     {
@@ -294,6 +190,13 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
             }
 
             context.Wait(MessageReceivedAsync);
+        }
+
+        private static string PopFrom(List<string> list)
+        {
+            var item = list.Count > 0 ? list[0].Trim() : "";
+            list.RemoveAt(0);
+            return item;
         }
     }
 }
