@@ -102,10 +102,10 @@ namespace SimpleEchoBot.Dialogs
 
                         var notificationRequestData = new NotificationRequest
                         {
-                            Title = PopFrom(notificationSegments),
-                            Details = PopFrom(notificationSegments),
-                            ItemLinkDescription = PopFrom(notificationSegments),
-                            ItemLink = PopFrom(notificationSegments)
+                            MessageTitle = PopFrom(notificationSegments),
+                            MessageBody = PopFrom(notificationSegments),
+                            LinkDescription = PopFrom(notificationSegments),
+                            LinkURL = PopFrom(notificationSegments)
                         };
 
                         await teamsFlowbotManager.SendNotification(notificationRequestData);
@@ -119,11 +119,11 @@ namespace SimpleEchoBot.Dialogs
 
                         var optionsRequestData = new MessageWithOptionsRequest
                         {
-                            Title = PopFrom(choiceSegments),
-                            Recipients = incomingActivity.From.Name,
-                            Details = PopFrom(choiceSegments),
-                            ItemLinkDescription = PopFrom(choiceSegments),
-                            ItemLink = PopFrom(choiceSegments),
+                            MessageTitle = PopFrom(choiceSegments),
+                            To = incomingActivity.From.Name,
+                            MessageBody = PopFrom(choiceSegments),
+                            LinkDescription = PopFrom(choiceSegments),
+                            LinkURL = PopFrom(choiceSegments),
                             Options = options
                         };
 
