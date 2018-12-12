@@ -1,6 +1,7 @@
 extern alias FlowData;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using Microsoft.Bot.Connector.Teams;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -161,6 +162,30 @@ namespace SimpleEchoBot.Dialogs
                             approvalOptions: approvalOptions);
 
                         await teamsFlowbotManager.SendAdaptiveCard(adaptiveCard, "Your approval has been requested for the following item");
+                        context.Wait(MessageReceivedAsync);
+                    }
+                    else if (trimmedText.StartsWith("mention"))
+                    {
+                        var text = trimmedText.Substring("mention".Length).Trim();
+                        var mentions = incomingActivity.GetMentions();
+                        var replyActivity = incomingActivity.CreateReply("here was your text: " + text);
+
+                        for (var i = 0; i < mentions.Length; i++)
+                        {
+                            if (mentions[i].Mentioned.Name == "Vincent")
+                            {
+                                replyActivity = replyActivity.AddMentionToText(mentions[i].Mentioned, MentionTextLocation.AppendText, "vincent");
+                            }
+                        }
+
+                        var card = AdaptiveCardBuilder.BuildNotificationCard(
+                            CultureInfo.CurrentCulture,
+                            "Here's a notification",
+                            "and this is it's body which contains this mention: <at>vincent</at>. the end.",
+                            "notifications really should not by definition contain random links",
+                            "https://random/link.com");
+
+                        await context.PostAsync(replyActivity.WithAttachment(card));
                         context.Wait(MessageReceivedAsync);
                     }
                     else

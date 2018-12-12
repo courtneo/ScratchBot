@@ -68,7 +68,7 @@ namespace SimpleEchoBot.Controllers
         /// </summary>
         /// <param name="subscriptionId">The id of the flow subscription to mark as completed.</param>
         [HttpDelete]
-        public object DeleteMessageWithOptions(string subscriptionId)
+        public HttpResponseMessage DeleteMessageWithOptions(string subscriptionId)
         {
             // Flow does not track subscriptions for options messages, all the tracking happens (is this right?) in LogicApps -
             // so this method can just return success
@@ -76,7 +76,7 @@ namespace SimpleEchoBot.Controllers
         }
 
         [HttpGet]
-        public object GetMetadata(string actionType, string metadataType)
+        public HttpResponseMessage GetMetadata(string actionType, string metadataType)
         {
             // the following will parse the enums case-insensitively
             TeamsFlowbotActionType teamsFlowbotActionType = actionType.ParseWithDefault(defaultValue: TeamsFlowbotActionType.NotSpecified);
