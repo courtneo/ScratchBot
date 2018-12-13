@@ -101,7 +101,7 @@ namespace SimpleEchoBot.Dialogs
                         var notification = trimmedText.Substring("notification".Length).Trim();
                         var notificationSegments = notification.Split(';').ToList();
 
-                        var notificationRequestData = new NotificationRequest
+                        var notificationRequestData = new BotNotificationRequest
                         {
                             MessageTitle = PopFrom(notificationSegments),
                             MessageBody = PopFrom(notificationSegments),
@@ -118,7 +118,7 @@ namespace SimpleEchoBot.Dialogs
                         var choiceSegments = choice.Split(';').ToList();
                         var options = new[] { "option 1", "option 2", "option 3" };
 
-                        var optionsRequestData = new MessageWithOptionsRequest
+                        var optionsRequestData = new BotMessageWithOptionsRequest
                         {
                             MessageTitle = PopFrom(choiceSegments),
                             To = incomingActivity.From.Name,

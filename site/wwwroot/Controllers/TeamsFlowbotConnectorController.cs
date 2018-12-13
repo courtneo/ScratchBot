@@ -28,7 +28,7 @@ namespace SimpleEchoBot.Controllers
         public async Task<HttpResponseMessage> PostNotification()
         {
             var optionsRequestData = await this.Request.Content
-                .ReadAsJsonAsync<NotificationRequest>(this.Configuration)
+                .ReadAsJsonAsync<BotNotificationRequest>(this.Configuration)
                 .ConfigureAwait(continueOnCapturedContext: false);
 
             await this.TeamsFlowbotManager.SendNotification(optionsRequestData);
@@ -42,7 +42,7 @@ namespace SimpleEchoBot.Controllers
         public async Task<HttpResponseMessage> PostAndWaitForMessageWithOptions()
         {
             var optionsRequestDataConnectorSubscription = await this.Request.Content
-                .ReadAsJsonAsync<ConnectorSubscriptionInput<MessageWithOptionsRequest>>(this.Configuration)
+                .ReadAsJsonAsync<ConnectorSubscriptionInput<BotMessageWithOptionsRequest>>(this.Configuration)
                 .ConfigureAwait(continueOnCapturedContext: false);
 
             await this.TeamsFlowbotManager.SendMessageWithOptions(optionsRequestDataConnectorSubscription.Body, optionsRequestDataConnectorSubscription.NotificationUrl);
@@ -56,7 +56,7 @@ namespace SimpleEchoBot.Controllers
         public async Task<HttpResponseMessage> PostMessageWithOptions()
         {
             var optionsRequestData = await this.Request.Content
-                .ReadAsJsonAsync<MessageWithOptionsRequest>(this.Configuration)
+                .ReadAsJsonAsync<BotMessageWithOptionsRequest>(this.Configuration)
                 .ConfigureAwait(continueOnCapturedContext: false);
 
             await this.TeamsFlowbotManager.SendMessageWithOptions(optionsRequestData);

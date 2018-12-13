@@ -15,8 +15,8 @@ namespace SimpleEchoBot
             ProcessSimpleConfiguration processSimpleConfiguration,
             HttpConfiguration httpConfiguration,
             CreateBotActivityDelegate createActivity,
-            PostBotActivityAsyncDelegate postActivityAsync,
-            UpdateBotActivityAsyncDelegate updateActivityAsync)
+            SendBotActivityAsyncDelegate postActivityAsync,
+            SendBotActivityAsyncDelegate updateActivityAsync)
             : base(
                   processSimpleConfiguration: processSimpleConfiguration,
                   httpConfiguration: httpConfiguration,

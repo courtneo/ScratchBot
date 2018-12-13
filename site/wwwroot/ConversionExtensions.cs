@@ -21,9 +21,6 @@ namespace SimpleEchoBot
     using FlowWeb::Microsoft.Azure.ProcessSimple.Web.Components;
     using FlowData::Microsoft.Azure.ProcessSimple.Data.Configuration;
     using System.Web.Http;
-    using FlowData::Microsoft.Azure.ProcessSimple.Data.DataProviders;
-    using FlowCommon::Microsoft.Azure.ProcessSimple.Common.Logging;
-    using FlowData::Microsoft.Azure.ProcessSimple.Data.Configuration;
 
     public static class ConversionExtensions
     {
@@ -47,7 +44,8 @@ namespace SimpleEchoBot
                 Text = activity.Text,
                 Summary = activity.Summary,
                 ReplyToId = activity.ReplyToId,
-                Attachments = activity.Attachments.ToBotAttachmentsList()
+                Attachments = activity.Attachments.ToBotAttachmentsList(),
+                Value = activity.Value
             };
         }
 
@@ -71,7 +69,8 @@ namespace SimpleEchoBot
                 Text = botActivity.Text,
                 Summary = botActivity.Summary,
                 ReplyToId = botActivity.ReplyToId,
-                Attachments = botActivity.Attachments.ToAttachmentsList()
+                Attachments = botActivity.Attachments.ToAttachmentsList(),
+                Value = botActivity.Value
             };
         }
 
