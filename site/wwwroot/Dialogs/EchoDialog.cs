@@ -101,8 +101,9 @@ namespace SimpleEchoBot.Dialogs
                         var notification = trimmedText.Substring("notification".Length).Trim();
                         var notificationSegments = notification.Split(';').ToList();
 
-                        var notificationRequestData = new BotNotificationRequest
+                        var notificationRequestData = new BotNotificationWithLinkRequest<UserBotRecipient>
                         {
+                            Recipient = new UserBotRecipient { To = incomingActivity.From.Name },
                             MessageTitle = PopFrom(notificationSegments),
                             MessageBody = PopFrom(notificationSegments),
                             LinkDescription = PopFrom(notificationSegments),
@@ -118,10 +119,10 @@ namespace SimpleEchoBot.Dialogs
                         var choiceSegments = choice.Split(';').ToList();
                         var options = new[] { "option 1", "option 2", "option 3" };
 
-                        var optionsRequestData = new BotMessageWithOptionsRequest
+                        var optionsRequestData = new BotMessageWithOptionsRequest<UserBotRecipient>
                         {
+                            Recipient = new UserBotRecipient { To = incomingActivity.From.Name },
                             MessageTitle = PopFrom(choiceSegments),
-                            To = incomingActivity.From.Name,
                             MessageBody = PopFrom(choiceSegments),
                             LinkDescription = PopFrom(choiceSegments),
                             LinkURL = PopFrom(choiceSegments),
@@ -162,6 +163,13 @@ namespace SimpleEchoBot.Dialogs
                             approvalOptions: approvalOptions);
 
                         await teamsFlowbotManager.SendAdaptiveCard(adaptiveCard, "Your approval has been requested for the following item");
+                        context.Wait(MessageReceivedAsync);
+                    }
+                    else if (trimmedText.StartsWith("html"))
+                    {
+                        var replyActivity = incomingActivity.CreateReply("<b>This is bold</b>And this is not <a href=\"https://www.google.com\">link</a>");
+                        replyActivity.TextFormat = "html";
+                        await context.PostAsync(replyActivity);
                         context.Wait(MessageReceivedAsync);
                     }
                     else if (trimmedText.StartsWith("mention"))

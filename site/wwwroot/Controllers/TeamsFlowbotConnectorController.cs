@@ -14,7 +14,7 @@ namespace SimpleEchoBot.Controllers
 {
     public class TeamsFlowbotConnectorController : ApiController
     {
-        private TeamsFlowbotManager TeamsFlowbotManager { get; set; }
+        private LocalTeamsFlowbotManager TeamsFlowbotManager { get; set; }
 
         public TeamsFlowbotConnectorController()
         {
@@ -25,10 +25,24 @@ namespace SimpleEchoBot.Controllers
         /// Create a new notification.
         /// </summary>
         [HttpPost]
-        public async Task<HttpResponseMessage> PostNotification()
+        public async Task<HttpResponseMessage> PostUserNotification()
         {
             var optionsRequestData = await this.Request.Content
-                .ReadAsJsonAsync<BotNotificationRequest>(this.Configuration)
+                .ReadAsJsonAsync<BotNotificationWithLinkRequest<UserBotRecipient>>(this.Configuration)
+                .ConfigureAwait(continueOnCapturedContext: false);
+
+            await this.TeamsFlowbotManager.SendNotification(optionsRequestData);
+            return this.Request.CreateResponse(statusCode: HttpStatusCode.OK);
+        }
+
+        /// <summary>
+        /// Create a new notification.
+        /// </summary>
+        [HttpPost]
+        public async Task<HttpResponseMessage> PostChannelNotification()
+        {
+            var optionsRequestData = await this.Request.Content
+                .ReadAsJsonAsync<BotNotificationWithLinkRequest<ChannelBotRecipient>>(this.Configuration)
                 .ConfigureAwait(continueOnCapturedContext: false);
 
             await this.TeamsFlowbotManager.SendNotification(optionsRequestData);
@@ -38,11 +52,15 @@ namespace SimpleEchoBot.Controllers
         /// <summary>
         /// Create and subscribe to a new message with options.
         /// </summary>
+        /// <param name="recipientType">The type of the recipient.</param>
         [HttpPost]
-        public async Task<HttpResponseMessage> PostAndWaitForMessageWithOptions()
+        public async Task<HttpResponseMessage> PostAndWaitForMessageWithOptions(string recipientType)
         {
+            TeamsFlowbotRecipientType teamsFlowbotRecipientType = recipientType.ParseWithDefault(defaultValue: TeamsFlowbotRecipientType.NotSpecified);
+
+
             var optionsRequestDataConnectorSubscription = await this.Request.Content
-                .ReadAsJsonAsync<ConnectorSubscriptionInput<BotMessageWithOptionsRequest>>(this.Configuration)
+                .ReadAsJsonAsync<ConnectorSubscriptionInput<BotMessageWithOptionsRequest<UserBotRecipient>>>(this.Configuration)
                 .ConfigureAwait(continueOnCapturedContext: false);
 
             await this.TeamsFlowbotManager.SendMessageWithOptions(optionsRequestDataConnectorSubscription.Body, optionsRequestDataConnectorSubscription.NotificationUrl);
@@ -52,11 +70,14 @@ namespace SimpleEchoBot.Controllers
         /// <summary>
         /// Create a new message with options.
         /// </summary>
+        /// <param name="recipientType">The type of the recipient.</param>
         [HttpPost]
-        public async Task<HttpResponseMessage> PostMessageWithOptions()
+        public async Task<HttpResponseMessage> PostMessageWithOptions(string recipientType)
         {
+            TeamsFlowbotRecipientType teamsFlowbotRecipientType = recipientType.ParseWithDefault(defaultValue: TeamsFlowbotRecipientType.NotSpecified);
+
             var optionsRequestData = await this.Request.Content
-                .ReadAsJsonAsync<BotMessageWithOptionsRequest>(this.Configuration)
+                .ReadAsJsonAsync<BotMessageWithOptionsRequest<UserBotRecipient>>(this.Configuration)
                 .ConfigureAwait(continueOnCapturedContext: false);
 
             await this.TeamsFlowbotManager.SendMessageWithOptions(optionsRequestData);
@@ -66,9 +87,10 @@ namespace SimpleEchoBot.Controllers
         /// <summary>
         /// Unsubscribe from a message with options.
         /// </summary>
+        /// <param name="recipientType">The type of the recipient.</param>
         /// <param name="subscriptionId">The id of the flow subscription to mark as completed.</param>
         [HttpDelete]
-        public HttpResponseMessage DeleteMessageWithOptions(string subscriptionId)
+        public HttpResponseMessage DeleteMessageWithOptions(string recipientType, string subscriptionId)
         {
             // Flow does not track subscriptions for options messages, all the tracking happens (is this right?) in LogicApps -
             // so this method can just return success
@@ -76,12 +98,14 @@ namespace SimpleEchoBot.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetMetadata(string actionType, string metadataType)
+        public HttpResponseMessage GetMetadata(string actionType, string recipientType, string metadataType)
         {
             // the following will parse the enums case-insensitively
             TeamsFlowbotActionType teamsFlowbotActionType = actionType.ParseWithDefault(defaultValue: TeamsFlowbotActionType.NotSpecified);
+            TeamsFlowbotRecipientType teamsFlowbotRecipientType = recipientType.ParseWithDefault(defaultValue: TeamsFlowbotRecipientType.NotSpecified);
+
             var connectorMetadataType = metadataType.ParseWithDefault(defaultValue: ConnectorMetadataType.NotSpecified);
-            var metadata = TeamsFlowbotManager.GetMetadata(teamsFlowbotActionType, connectorMetadataType);
+            var metadata = TeamsFlowbotManager.GetMetadata(teamsFlowbotActionType, teamsFlowbotRecipientType, connectorMetadataType);
             return this.Request.CreateResponse(statusCode: HttpStatusCode.OK, value: metadata);
         }
 

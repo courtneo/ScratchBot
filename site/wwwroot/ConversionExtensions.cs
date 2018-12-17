@@ -174,7 +174,7 @@ namespace SimpleEchoBot
             return activity;
         }
 
-        public static TeamsFlowbotManager GetTeamsFlowbotManager(this object theObject)
+        public static LocalTeamsFlowbotManager GetTeamsFlowbotManager(this object theObject)
         {
             Func<string> getServiceUrl = () =>
             {
@@ -210,7 +210,7 @@ namespace SimpleEchoBot
                 updateActivityAsync: null);
         }
 
-        public static TeamsFlowbotManager GetTeamsFlowbotManager(this object theObject, IDialogContext context, Activity activityToReplyTo)
+        public static LocalTeamsFlowbotManager GetTeamsFlowbotManager(this object theObject, IDialogContext context, Activity activityToReplyTo)
         {
             var connectorClient = new ConnectorClient(new Uri(activityToReplyTo.ServiceUrl));
 

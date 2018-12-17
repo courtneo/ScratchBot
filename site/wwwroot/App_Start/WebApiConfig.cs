@@ -31,36 +31,43 @@ namespace SimpleEchoBot
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "TeamsFlowbotConnectorPostNotification",
-                routeTemplate: "apis/flowbot/notification",
-                defaults: new { id = RouteParameter.Optional, controller = "TeamsFlowbotConnector", action = "PostNotification" },
+                name: "TeamsFlowbotConnectorPostUserNotification",
+                routeTemplate: "apis/flowbot/actions/notification/recipientTypes/user",
+                defaults: new { id = RouteParameter.Optional, controller = "TeamsFlowbotConnector", action = "PostUserNotification" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "TeamsFlowbotConnectorPostChannelNotification",
+                routeTemplate: "apis/flowbot/actions/notification/recipientTypes/channel",
+                defaults: new { id = RouteParameter.Optional, controller = "TeamsFlowbotConnector", action = "PostChannelNotification" },
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
             );
 
             config.Routes.MapHttpRoute(
                 name: "TeamsFlowbotConnectorPostMessageWithOptions",
-                routeTemplate: "apis/flowbot/messagewithoptions",
+                routeTemplate: "apis/flowbot/actions/messagewithoptions/recipientTypes/{recipientType}",
                 defaults: new { id = RouteParameter.Optional, controller = "TeamsFlowbotConnector", action = "PostMessageWithOptions" },
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
             );
 
             config.Routes.MapHttpRoute(
-                name: "TeamsFlowbotConnectorSubscribe",
-                routeTemplate: "apis/flowbot/messagewithoptions/$subscriptions",
+                name: "TeamsFlowbotConnectorSubscribeMessageWithOptions",
+                routeTemplate: "apis/flowbot/actions/messagewithoptions/recipientTypes/{recipientType}/$subscriptions",
                 defaults: new { id = RouteParameter.Optional, controller = "TeamsFlowbotConnector", action = "PostAndWaitForMessageWithOptions" },
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
             );
 
             config.Routes.MapHttpRoute(
-                name: "TeamsFlowbotConnectorUnsubscribe",
-                routeTemplate: "apis/flowbot/messagewithoptions/$subscriptions/{subscriptionId}",
+                name: "TeamsFlowbotConnectorUnsubscribeMessageWithOptions",
+                routeTemplate: "apis/flowbot/actions/messagewithoptions/recipientTypes/{recipientType}/$subscriptions/{subscriptionId}",
                 defaults: new { id = RouteParameter.Optional, controller = "TeamsFlowbotConnector", action = "DeleteMessageWithOptions" },
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Delete) }
             );
 
             config.Routes.MapHttpRoute(
                 name: "TeamsFlowbotConnectorGetMetadata",
-                routeTemplate: "apis/flowbot/{actionType}/$metadata.json/{metadataType}",
+                routeTemplate: "apis/flowbot/actions/{actionType}/recipientTypes/{recipientType}/$metadata.json/{metadataType}",
                 defaults: new { id = RouteParameter.Optional, controller = "TeamsFlowbotConnector", action = "GetMetadata" },
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
             );
