@@ -176,20 +176,19 @@ namespace SimpleEchoBot.Dialogs
                     {
                         var text = trimmedText.Substring("mention".Length).Trim();
                         var mentions = incomingActivity.GetMentions();
-                        var replyActivity = incomingActivity.CreateReply("here was your text: " + text);
+                        var replyActivity = incomingActivity.CreateReply(string.Format("Your text contained {0} mentions. Here is a mention for you: ", mentions.Length));
 
-                        for (var i = 0; i < mentions.Length; i++)
-                        {
-                            if (mentions[i].Mentioned.Name == "Vincent")
-                            {
-                                replyActivity = replyActivity.AddMentionToText(mentions[i].Mentioned, MentionTextLocation.AppendText, "vincent");
-                            }
-                        }
+                        // (this is actually Vincent)
+                        var mention = new ChannelAccount(
+                            id: "29:1P42CnPU5FKEBUXSfFX0pQS-yvsggkTHkNkpfnMisIfnI1X84UJo25DoffCfECYCnJG6Q8TC6wEQC04W7G4fMSQ",
+                            name: "Baz Bing");
+
+                        replyActivity = replyActivity.AddMentionToText(mention, MentionTextLocation.AppendText, "Foo Bar");
 
                         var card = AdaptiveCardBuilder.BuildNotificationCard(
                             CultureInfo.CurrentCulture,
                             "Here's a notification",
-                            "and this is it's body which contains this mention: <at>vincent</at>. the end.",
+                            "and this is it's body which contains this mention which won't work because mentions aren't supported in cards: <at>Foo Bar</at>. the end.",
                             "notifications really should not by definition contain random links",
                             "https://random/link.com");
 

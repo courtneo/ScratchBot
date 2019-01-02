@@ -36,7 +36,7 @@ namespace SimpleEchoBot
                 ChannelData = activity.ChannelData.ToJObject(),
                 From = activity.From.ToBotChannelAccount(),
                 Conversation = activity.Conversation.ToBotConversationAccount(),
-                Entities = activity.Entities.ToJTokenArray(),
+                Entities = activity.Entities.ToBotActivityEntityList(),
                 Recipient = activity.Recipient.ToBotChannelAccount(),
                 TextFormat = activity.TextFormat,
                 TopicName = activity.TopicName,
@@ -71,6 +71,76 @@ namespace SimpleEchoBot
                 ReplyToId = botActivity.ReplyToId,
                 Attachments = botActivity.Attachments.ToAttachmentsList(),
                 Value = botActivity.Value
+            };
+        }
+
+        public static List<BotActivityEntity> ToBotActivityEntityList(this IEnumerable<Entity> entities)
+        {
+            return entities == null
+                ? null
+                : entities
+                    .Select(e => e is Mention
+                        ? (BotActivityEntity)(e as Mention).ToBotActivityMentionEntity()
+                        : (BotActivityEntity)(e as ClientInfo).ToBotActivityClientInfoEntity())
+                    .ToList();
+        }
+
+        public static List<Entity> ToEntityList(this IEnumerable<BotActivityEntity> entities)
+        {
+            return entities == null
+                ? null
+                : entities
+                    .Select(e => e is BotActivityMentionEntity
+                        ? (Entity)(e as BotActivityMentionEntity).ToMention()
+                        : (Entity)(e as BotActivityClientInfoEntity).ToClientInfo())
+                    .ToList();
+        }
+
+        public static BotActivityClientInfoEntity ToBotActivityClientInfoEntity(this ClientInfo clientInfo)
+        {
+            return new BotActivityClientInfoEntity
+            {
+                Locale = clientInfo.Locale,
+                Country = clientInfo.Country,
+                Platform = clientInfo.Platform
+            };
+        }
+
+        public static ClientInfo ToClientInfo(this BotActivityClientInfoEntity clientInfo)
+        {
+            return new ClientInfo
+            {
+                Locale = clientInfo.Locale,
+                Country = clientInfo.Country,
+                Platform = clientInfo.Platform
+            };
+        }
+
+        public static BotActivityMentionEntity ToBotActivityMentionEntity(this Mention mention)
+        {
+            return new BotActivityMentionEntity
+            {
+                Type = mention.Type,
+                Text = mention.Text,
+                Mentioned = new BotChannelAccount
+                {
+                    Id = mention.Mentioned.Id,
+                    Name = mention.Mentioned.Name
+                }
+            };
+        }
+
+        public static Mention ToMention(this BotActivityMentionEntity mention)
+        {
+            return new Mention
+            {
+                Type = mention.Type,
+                Text = mention.Text,
+                Mentioned = new ChannelAccount
+                {
+                    Id = mention.Mentioned.Id,
+                    Name = mention.Mentioned.Name
+                }
             };
         }
 
@@ -221,5 +291,23 @@ namespace SimpleEchoBot
                 postActivityAsync: (botActivity) => context.PostAsync(botActivity.ToActivity()),
                 updateActivityAsync: (botActivity) => connectorClient.Conversations.UpdateActivityAsync(activityToReplyTo.Conversation.Id, activityToReplyTo.ReplyToId, botActivity.ToActivity()));
         }
+    }
+
+    public class ClientInfo : Entity
+    {
+        /// <summary>
+        /// Gets or sets the Locale.
+        /// </summary>
+        public string Locale { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Country.
+        /// </summary>
+        public string Country { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Platform.
+        /// </summary>
+        public string Platform { get; set; }
     }
 }
