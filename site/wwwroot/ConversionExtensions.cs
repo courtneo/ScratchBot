@@ -15,12 +15,6 @@ namespace SimpleEchoBot
     using global::AdaptiveCards;
     using FlowData::Microsoft.Azure.ProcessSimple.Data.Entities;
     using System.Linq;
-    using System.Net;
-    using SimpleEchoBot.Dialogs;
-    using FlowCommon::Microsoft.Azure.ProcessSimple.Common.ErrorResponses;
-    using FlowWeb::Microsoft.Azure.ProcessSimple.Web.Components;
-    using FlowData::Microsoft.Azure.ProcessSimple.Data.Configuration;
-    using System.Web.Http;
 
     public static class ConversionExtensions
     {
@@ -80,8 +74,8 @@ namespace SimpleEchoBot
                 ? null
                 : entities
                     .Select(e => e is Mention
-                        ? (BotActivityEntity)(e as Mention).ToBotActivityMentionEntity()
-                        : (BotActivityEntity)(e as ClientInfo).ToBotActivityClientInfoEntity())
+                        ? (BotActivityEntity)e.GetAs<Mention>().ToBotActivityMentionEntity()
+                        : (BotActivityEntity)e.GetAs<ClientInfo>().ToBotActivityClientInfoEntity())
                     .ToList();
         }
 
@@ -242,54 +236,6 @@ namespace SimpleEchoBot
             });
 
             return activity;
-        }
-
-        public static LocalTeamsFlowbotManager GetTeamsFlowbotManager(this object theObject)
-        {
-            Func<string> getServiceUrl = () =>
-            {
-                if (EchoDialog.LastSeenActivity == null)
-                {
-                    throw new ErrorResponseMessageException(
-                        HttpStatusCode.PreconditionFailed,
-                        ErrorResponseCode.BadRequest,
-                        "To enable the bot to post, an initial message must first be sent to it.");
-                }
-
-                return EchoDialog.LastSeenActivity.ServiceUrl;
-            };
-
-            Func<string, Activity> createActivity = (string message) =>
-            {
-                if (EchoDialog.LastSeenActivity == null)
-                {
-                    throw new ErrorResponseMessageException(
-                        HttpStatusCode.BadRequest,
-                        ErrorResponseCode.BadRequest,
-                        "To enable the bot to post, an initial message must first be sent to it.");
-                }
-
-                return EchoDialog.LastSeenActivity.CreateReply(message);
-            };
-
-            return new LocalTeamsFlowbotManager(
-                processSimpleConfiguration: ProcessSimpleConfiguration.Instance,
-                httpConfiguration: GlobalConfiguration.Configuration,
-                createActivity: (message) => createActivity(message).ToBotActivity(),
-                postActivityAsync: (botActivity) => (new ConnectorClient(new Uri(getServiceUrl()))).Conversations.SendToConversationAsync(botActivity.ToActivity()),
-                updateActivityAsync: null);
-        }
-
-        public static LocalTeamsFlowbotManager GetTeamsFlowbotManager(this object theObject, IDialogContext context, Activity activityToReplyTo)
-        {
-            var connectorClient = new ConnectorClient(new Uri(activityToReplyTo.ServiceUrl));
-
-            return new LocalTeamsFlowbotManager(
-                processSimpleConfiguration: ProcessSimpleConfiguration.Instance,
-                httpConfiguration: GlobalConfiguration.Configuration,
-                createActivity: (message) => activityToReplyTo.CreateReply(message).ToBotActivity(),
-                postActivityAsync: (botActivity) => context.PostAsync(botActivity.ToActivity()),
-                updateActivityAsync: (botActivity) => connectorClient.Conversations.UpdateActivityAsync(activityToReplyTo.Conversation.Id, activityToReplyTo.ReplyToId, botActivity.ToActivity()));
         }
     }
 

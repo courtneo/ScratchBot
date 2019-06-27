@@ -1,4 +1,5 @@
 using Autofac;
+using System;
 using System.Web.Http;
 using System.Collections.Generic;
 using System.Configuration;
@@ -30,9 +31,15 @@ namespace SimpleEchoBot
                 this.appConfigSettingScope = null;
             }
         }
+        public static System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        {
+            Console.WriteLine("resolving assembly: " + args.Name);
+            return Assembly.LoadFrom("");
+        }
 
         protected void Application_Start()
         {
+            // AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
             // Bot Storage: This is a great spot to register the private state storage for your bot. 
             // We provide adapters for Azure Table, CosmosDb, SQL Azure, or you can implement your own!
             // For samples and documentation, see: https://github.com/Microsoft/BotBuilder-Azure

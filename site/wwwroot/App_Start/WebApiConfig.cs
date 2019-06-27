@@ -12,7 +12,7 @@ namespace SimpleEchoBot
     {
         public static void Register(HttpConfiguration config)
         {
-            // ProcessSimpleConfiguration.Instance.Initialize().Wait();
+            ProcessSimpleConfiguration.Instance.Initialize().Wait();
 
             // Json settings
             config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
@@ -29,6 +29,13 @@ namespace SimpleEchoBot
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            config.Routes.MapHttpRoute(
+                name: "TeamsFlowbotConnectorPostAdaptiveCard",
+                routeTemplate: "apis/flowbot/actions/adaptivecard/recipientTypes/{recipientType}",
+                defaults: new { id = RouteParameter.Optional, controller = "TeamsFlowbotConnector", action = "PostAdaptiveCard" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
+            );
 
             config.Routes.MapHttpRoute(
                 name: "TeamsFlowbotConnectorPostUserNotification",

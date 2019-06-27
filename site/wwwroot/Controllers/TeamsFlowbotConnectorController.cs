@@ -1,24 +1,48 @@
 ﻿extern alias FlowData;
 extern alias FlowWeb;
+extern alias FlowCommon;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
+using Microsoft.WindowsAzure.ResourceStack.Common.Instrumentation;
 using FlowData::Microsoft.Azure.ProcessSimple.Data.Entities;
-using FlowWeb::Microsoft.Azure.ProcessSimple.Web.Components;
 using FlowWeb::Microsoft.Azure.ProcessSimple.Web.Extensions;
+using FlowCommon::Microsoft.Azure.ProcessSimple.Common.Extensions;
+using FlowData::Microsoft.Azure.ProcessSimple.Data.Extensions;
+using FlowWeb::Microsoft.Azure.ProcessSimple.Web.Common;
+using FlowData::Microsoft.Azure.ProcessSimple.Data.Configuration;
+using FlowWeb::Microsoft.Azure.ProcessSimple.Web.Components;
 
 namespace SimpleEchoBot.Controllers
 {
     public class TeamsFlowbotConnectorController : ApiController
     {
-        private LocalTeamsFlowbotManager TeamsFlowbotManager { get; set; }
-
-        public TeamsFlowbotConnectorController()
+        /// <summary>
+        /// Post a new adaptive card to a user.
+        /// </summary>
+        /// <param name="recipientType">The type of the recipient.</param>
+        [HttpPost]
+        public async Task<HttpResponseMessage> PostAdaptiveCard(string recipientType)
         {
-            this.TeamsFlowbotManager = this.GetTeamsFlowbotManager();
+            this.PopulateSenderFromAuthHeader();
+            string operationName = "TeamsFlowbotActionsConnectorController.PostAdaptiveCard";
+            TeamsFlowbotRecipientType teamsFlowbotRecipientType = recipientType.ParseWithDefault(defaultValue: TeamsFlowbotRecipientType.NotSpecified);
+            Validation.RecipientType(teamsFlowbotRecipientType);
+
+            return teamsFlowbotRecipientType == TeamsFlowbotRecipientType.User
+                ? await this
+                    .GetTeamsFlowbotManager()
+                    .PostMessageAsync<BotMessageRequest<UserBotRecipient>, UserBotRecipient>(operationName, this.Request, false, TeamsFlowbotActionType.AdaptiveCard)
+                    .ConfigureAwait(continueOnCapturedContext: false)
+                : await this
+                    .GetTeamsFlowbotManager()
+                    .PostMessageAsync<BotMessageRequest<ChannelBotRecipient>, ChannelBotRecipient>(operationName, this.Request, false, TeamsFlowbotActionType.AdaptiveCard)
+                    .ConfigureAwait(continueOnCapturedContext: false);
         }
 
         /// <summary>
@@ -27,12 +51,13 @@ namespace SimpleEchoBot.Controllers
         [HttpPost]
         public async Task<HttpResponseMessage> PostUserNotification()
         {
-            var optionsRequestData = await this.Request.Content
-                .ReadAsJsonAsync<BotNotificationWithLinkRequest<UserBotRecipient>>(this.Configuration)
-                .ConfigureAwait(continueOnCapturedContext: false);
+            this.PopulateSenderFromAuthHeader();
+            string operationName = "TeamsFlowbotActionsConnectorController.NotifyUser";
 
-            await this.TeamsFlowbotManager.SendNotification(optionsRequestData);
-            return this.Request.CreateResponse(statusCode: HttpStatusCode.OK);
+            return await this
+                .GetTeamsFlowbotManager()
+                .PostMessageAsync<BotNotificationRequest<UserBotRecipient>, UserBotRecipient>(operationName, this.Request, false, TeamsFlowbotActionType.Notification)
+                .ConfigureAwait(continueOnCapturedContext: false);
         }
 
         /// <summary>
@@ -41,12 +66,13 @@ namespace SimpleEchoBot.Controllers
         [HttpPost]
         public async Task<HttpResponseMessage> PostChannelNotification()
         {
-            var optionsRequestData = await this.Request.Content
-                .ReadAsJsonAsync<BotNotificationWithLinkRequest<ChannelBotRecipient>>(this.Configuration)
-                .ConfigureAwait(continueOnCapturedContext: false);
+            this.PopulateSenderFromAuthHeader();
+            string operationName = "TeamsFlowbotActionsConnectorController.NotifyChannel";
 
-            await this.TeamsFlowbotManager.SendNotification(optionsRequestData);
-            return this.Request.CreateResponse(statusCode: HttpStatusCode.OK);
+            return await this
+                .GetTeamsFlowbotManager()
+                .PostMessageAsync<BotMessageRequest<ChannelBotRecipient>, ChannelBotRecipient>(operationName, this.Request, false, TeamsFlowbotActionType.Notification)
+                .ConfigureAwait(continueOnCapturedContext: false);
         }
 
         /// <summary>
@@ -56,15 +82,20 @@ namespace SimpleEchoBot.Controllers
         [HttpPost]
         public async Task<HttpResponseMessage> PostAndWaitForMessageWithOptions(string recipientType)
         {
+            this.PopulateSenderFromAuthHeader();
+            string operationName = "TeamsFlowbotActionsConnectorController.PostAndWaitForMessageWithOptions";
             TeamsFlowbotRecipientType teamsFlowbotRecipientType = recipientType.ParseWithDefault(defaultValue: TeamsFlowbotRecipientType.NotSpecified);
+            Validation.RecipientType(teamsFlowbotRecipientType);
 
-
-            var optionsRequestDataConnectorSubscription = await this.Request.Content
-                .ReadAsJsonAsync<ConnectorSubscriptionInput<BotMessageWithOptionsRequest<UserBotRecipient>>>(this.Configuration)
-                .ConfigureAwait(continueOnCapturedContext: false);
-
-            await this.TeamsFlowbotManager.SendMessageWithOptions(optionsRequestDataConnectorSubscription.Body, optionsRequestDataConnectorSubscription.NotificationUrl);
-            return this.Request.CreateResponse(statusCode: HttpStatusCode.OK);
+            return teamsFlowbotRecipientType == TeamsFlowbotRecipientType.User
+                ? await this
+                    .GetTeamsFlowbotManager()
+                    .PostMessageAsync<BotMessageWithOptionsRequest<UserBotRecipient>, UserBotRecipient>(operationName, this.Request, true, TeamsFlowbotActionType.MessageWithOptions)
+                    .ConfigureAwait(continueOnCapturedContext: false)
+                : await this
+                    .GetTeamsFlowbotManager()
+                    .PostMessageAsync<BotMessageWithOptionsRequest<ChannelBotRecipient>, ChannelBotRecipient>(operationName, this.Request, true, TeamsFlowbotActionType.MessageWithOptions)
+                    .ConfigureAwait(continueOnCapturedContext: false);
         }
 
         /// <summary>
@@ -74,14 +105,20 @@ namespace SimpleEchoBot.Controllers
         [HttpPost]
         public async Task<HttpResponseMessage> PostMessageWithOptions(string recipientType)
         {
+            this.PopulateSenderFromAuthHeader();
+            string operationName = "TeamsFlowbotActionsConnectorController.PostMessageWithOptions";
             TeamsFlowbotRecipientType teamsFlowbotRecipientType = recipientType.ParseWithDefault(defaultValue: TeamsFlowbotRecipientType.NotSpecified);
+            Validation.RecipientType(teamsFlowbotRecipientType);
 
-            var optionsRequestData = await this.Request.Content
-                .ReadAsJsonAsync<BotMessageWithOptionsRequest<UserBotRecipient>>(this.Configuration)
-                .ConfigureAwait(continueOnCapturedContext: false);
-
-            await this.TeamsFlowbotManager.SendMessageWithOptions(optionsRequestData);
-            return this.Request.CreateResponse(statusCode: HttpStatusCode.OK);
+            return teamsFlowbotRecipientType == TeamsFlowbotRecipientType.User
+                ? await this
+                    .GetTeamsFlowbotManager()
+                    .PostMessageAsync<BotMessageWithOptionsRequest<UserBotRecipient>, UserBotRecipient>(operationName, this.Request, false, TeamsFlowbotActionType.MessageWithOptions)
+                    .ConfigureAwait(continueOnCapturedContext: false)
+                : await this
+                    .GetTeamsFlowbotManager()
+                    .PostMessageAsync<BotMessageWithOptionsRequest<ChannelBotRecipient>, ChannelBotRecipient>(operationName, this.Request, false, TeamsFlowbotActionType.MessageWithOptions)
+                    .ConfigureAwait(continueOnCapturedContext: false);
         }
 
         /// <summary>
@@ -105,8 +142,43 @@ namespace SimpleEchoBot.Controllers
             TeamsFlowbotRecipientType teamsFlowbotRecipientType = recipientType.ParseWithDefault(defaultValue: TeamsFlowbotRecipientType.NotSpecified);
 
             var connectorMetadataType = metadataType.ParseWithDefault(defaultValue: ConnectorMetadataType.NotSpecified);
-            var metadata = TeamsFlowbotManager.GetMetadata(teamsFlowbotActionType, teamsFlowbotRecipientType, connectorMetadataType);
+
+            var metadata = this
+                .GetTeamsFlowbotManager()
+                .GetMetadata(teamsFlowbotActionType, teamsFlowbotRecipientType, connectorMetadataType);
+
             return this.Request.CreateResponse(statusCode: HttpStatusCode.OK, value: metadata);
+        }
+
+        private TeamsFlowbotManager GetTeamsFlowbotManager()
+        {
+            return new TeamsFlowbotManager(
+                processSimpleConfiguration: ProcessSimpleConfiguration.Instance,
+                httpConfiguration: GlobalConfiguration.Configuration,
+                withUnencryptedFlowbotPassword: true);
+        }
+
+        private void PopulateSenderFromAuthHeader()
+        {
+            var token = this.Request.Headers.Authorization.Parameter;
+            var parsedToken = new JwtSecurityTokenHandler().ReadJwtToken(token) as JwtSecurityToken;
+            var connectionRequestIdentity = new RequestIdentity
+            {
+                AuthenticationType = PowerFlowConstants.MicrosoftGraphTokenAuthenticationType,
+                IsAuthenticated = true,
+                Claims = parsedToken.Claims
+                    .Where(claim => !claim.Type.EqualsInsensitively("signin_state"))
+                    .Where(claim => !claim.Type.EqualsInsensitively("amr"))
+                    .ToInsensitiveDictionary(claim => claim.Type, claim => claim.Value),
+                Name = parsedToken.Claims.Where(claim => claim.Type.EqualsOrdinal("name")).FirstOrDefault().Value
+            };
+
+            // Get tenantId and objectId set them into authentication identity
+            var tenantId = parsedToken.Claims.Where(thisClaim => thisClaim.Type.EqualsOrdinal("tid")).FirstOrDefault().Value;
+            var objectId = parsedToken.Claims.Where(thisClaim => thisClaim.Type.EqualsOrdinal("oid")).FirstOrDefault().Value;
+            connectionRequestIdentity.Claims.Add(ClaimsConstants.ArmClaimNames.TenantId, tenantId);
+            connectionRequestIdentity.Claims.Add(ClaimsConstants.ArmClaimNames.ObjectId, objectId);
+            RequestCorrelationContext.Current.SetAuthenticationIdentity(connectionRequestIdentity);
         }
 
         // GET: api/Connector

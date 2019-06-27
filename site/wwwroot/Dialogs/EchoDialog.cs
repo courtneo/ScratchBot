@@ -1,4 +1,5 @@
 extern alias FlowData;
+extern alias FlowWeb;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using Microsoft.Bot.Connector.Teams;
@@ -12,8 +13,12 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.Http;
+using Microsoft.WindowsAzure.ResourceStack.Common.Instrumentation;
 using FlowData::Microsoft.Azure.ProcessSimple.Data.Entities;
 using FlowData::Microsoft.Azure.ProcessSimple.Data.Components.AdaptiveCards;
+using FlowData::Microsoft.Azure.ProcessSimple.Data.Configuration;
+using FlowWeb::Microsoft.Azure.ProcessSimple.Web.Components;
 using AdaptiveActionData = FlowData::Microsoft.Azure.ProcessSimple.Data.Components.AdaptiveCards.AdaptiveActionData;
 
 namespace SimpleEchoBot.Dialogs
@@ -36,13 +41,30 @@ namespace SimpleEchoBot.Dialogs
             {
                 var message = await argument;
                 var incomingActivity = (message as Activity);
-                var teamsFlowbotManager = this.GetTeamsFlowbotManager(context, incomingActivity);
                 LastSeenActivity = incomingActivity;
+
+                var teamsFlowbotManager = new TeamsFlowbotManager(
+                    processSimpleConfiguration: ProcessSimpleConfiguration.Instance,
+                    httpConfiguration: GlobalConfiguration.Configuration,
+                    withUnencryptedFlowbotPassword: true);
 
                 if (message.Text == null)
                 {
                     var adaptiveActionData = AdaptiveActionData.Deserialize(incomingActivity.Value.ToString());
-                    await teamsFlowbotManager.ReceiveAdaptiveAction(adaptiveActionData, incomingActivity.From.ToBotChannelAccount(), incomingActivity.From.AadObjectId);
+
+                    await teamsFlowbotManager.ReceiveAdaptiveAction(
+                        adaptiveActionData: adaptiveActionData,
+                        replyActivity: incomingActivity.CreateReply().ToBotActivity(),
+                        sendingAccount: incomingActivity.From.ToBotChannelAccount(),
+                        sendingAccountAadObjectId: incomingActivity.From.AadObjectId,
+                        idOfActivityFromWhichTheActionWasEmitted: null, // the method won't use this since we're supplying it with our own post method
+                        asyncPostActivity: (botActivity) => {
+                            return new ConnectorClient(new Uri(incomingActivity.ServiceUrl))
+                                .Conversations
+                                .UpdateActivityAsync(incomingActivity.Conversation.Id, incomingActivity.ReplyToId, botActivity.ToActivity());
+                        }
+                    );
+
                     context.Wait(MessageReceivedAsync);
                 }
                 else
@@ -101,16 +123,34 @@ namespace SimpleEchoBot.Dialogs
                         var notification = trimmedText.Substring("notification".Length).Trim();
                         var notificationSegments = notification.Split(';').ToList();
 
-                        var notificationRequestData = new BotNotificationWithLinkRequest<UserBotRecipient>
+                        var notificationRequestData = new BotNotificationRequest<UserBotRecipient>
                         {
                             Recipient = new UserBotRecipient { To = incomingActivity.From.Name },
                             MessageTitle = PopFrom(notificationSegments),
-                            MessageBody = PopFrom(notificationSegments),
-                            LinkDescription = PopFrom(notificationSegments),
-                            LinkURL = PopFrom(notificationSegments)
+                            MessageBody = PopFrom(notificationSegments)
                         };
 
-                        await teamsFlowbotManager.SendNotification(notificationRequestData);
+                        // todo: split up recipients array and look them up in graph
+                        var adaptiveCard = AdaptiveCardBuilder.BuildNotificationCard(
+                            cultureInfo: CultureInfo.CurrentCulture,
+                            requestor: new RequestIdentity { Name = (notificationRequestData.Recipient as UserBotRecipient).To },
+                            notificationTitle: notificationRequestData.MessageTitle,
+                            notificationBody: notificationRequestData.MessageBody);
+
+                        // await context.PostAsync(incomingActivity.CreateReply("You have been issued the following notification").ToBotActivity().WithAttachment(adaptiveCard).ToActivity());
+                        var messageWithFooter = string.Format(
+                            CultureInfo.InvariantCulture,
+                            "{0}\r\n\r\n**{1}**",
+                            notificationRequestData.MessageBody,
+                            AdaptiveCardBuilder.GetFooterFromRequestor(
+                                new RequestIdentity
+                                {
+                                    Name = (notificationRequestData.Recipient as UserBotRecipient).To //,
+                                    // Claims = new Dictionary<string, string> { { "upn", "courtneo@microsoft.com" } }
+                                }));
+
+                        await context.PostAsync(incomingActivity.CreateReply(messageWithFooter));
+
                         context.Wait(MessageReceivedAsync);
                     }
                     else if (trimmedText.StartsWith("choice"))
@@ -119,17 +159,25 @@ namespace SimpleEchoBot.Dialogs
                         var choiceSegments = choice.Split(';').ToList();
                         var options = new[] { "option 1", "option 2", "option 3" };
 
-                        var optionsRequestData = new BotMessageWithOptionsRequest<UserBotRecipient>
+                        var messageWithOptionsRequestData = new BotMessageWithOptionsRequest<UserBotRecipient>
                         {
                             Recipient = new UserBotRecipient { To = incomingActivity.From.Name },
                             MessageTitle = PopFrom(choiceSegments),
                             MessageBody = PopFrom(choiceSegments),
-                            LinkDescription = PopFrom(choiceSegments),
-                            LinkURL = PopFrom(choiceSegments),
                             Options = options
                         };
 
-                        await teamsFlowbotManager.SendMessageWithOptions(optionsRequestData);
+                        // todo: split up recipients array and look them up in graph
+                        var adaptiveCard = AdaptiveCardBuilder.BuildMessageWithOptionsRequestCard(
+                            cultureInfo: CultureInfo.CurrentCulture,
+                            choiceTitle: messageWithOptionsRequestData.MessageTitle,
+                            choiceCreationDate: DateTime.Now,
+                            requestor: new RequestIdentity { Name = messageWithOptionsRequestData.Recipient.To, Claims = new Dictionary<string, string> { { "upn", "courtneo@microsoft.com" } } },
+                            choiceDetails: messageWithOptionsRequestData.MessageBody,
+                            choiceOptions: messageWithOptionsRequestData.Options,
+                            notificationUrl: null);
+
+                        await context.PostAsync(incomingActivity.CreateReply("Your choice has been requested for the following item").ToBotActivity().WithAttachment(adaptiveCard).ToActivity());
                         context.Wait(MessageReceivedAsync);
                     }
                     else if (trimmedText.StartsWith("approval"))
@@ -153,16 +201,15 @@ namespace SimpleEchoBot.Dialogs
                             cultureInfo: cultureInfo,
                             approvalTitle: approvalTitle,
                             approvalCreationDate: approvalCreationDate,
-                            requestorName: incomingActivity.From.Name,
+                            requestor: new RequestIdentity { Name = incomingActivity.From.Name, Claims = new Dictionary<string, string> { { "upn", "courtneo@microsoft.com" } } },
                             approvalDetails: approvalDetails,
-                            approvalItemLinkDescription: approvalItemLinkDescription,
-                            approvalItemLink: approvalItemLink,
                             environment: environment,
                             approvalLink: approvalLink,
                             approvalName: approvalName,
                             approvalOptions: approvalOptions);
 
-                        await teamsFlowbotManager.SendAdaptiveCard(adaptiveCard, "Your approval has been requested for the following item");
+                        var replyActivity = incomingActivity.CreateReply("Your approval has been requested for the following item");
+                        await context.PostAsync(replyActivity.ToBotActivity().WithAttachment(adaptiveCard).ToActivity());
                         context.Wait(MessageReceivedAsync);
                     }
                     else if (trimmedText.StartsWith("html"))
@@ -187,10 +234,9 @@ namespace SimpleEchoBot.Dialogs
 
                         var card = AdaptiveCardBuilder.BuildNotificationCard(
                             CultureInfo.CurrentCulture,
+                            new RequestIdentity { Name = incomingActivity.From.Name, Claims = new Dictionary<string, string> { { "upn", "courtneo@microsoft.com" } } },
                             "Here's a notification",
-                            "and this is it's body which contains this mention which won't work because mentions aren't supported in cards: <at>Foo Bar</at>. the end.",
-                            "notifications really should not by definition contain random links",
-                            "https://random/link.com");
+                            "and this is it's body which contains this mention which won't work because mentions aren't supported in cards: <at>Foo Bar</at>. the end.");
 
                         await context.PostAsync(replyActivity.WithAttachment(card));
                         context.Wait(MessageReceivedAsync);
