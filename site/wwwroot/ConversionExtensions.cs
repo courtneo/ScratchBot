@@ -39,7 +39,7 @@ namespace SimpleEchoBot
                 Summary = activity.Summary,
                 ReplyToId = activity.ReplyToId,
                 Attachments = activity.Attachments.ToBotAttachmentsList(),
-                Value = activity.Value
+                Value = activity.Value as JToken
             };
         }
 

@@ -1,3 +1,4 @@
+extern alias FlowCommon;
 extern alias FlowData;
 extern alias FlowWeb;
 using Microsoft.Bot.Builder.Dialogs;
@@ -12,9 +13,11 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.WindowsAzure.ResourceStack.Common.Instrumentation;
+using FlowCommon::Microsoft.Azure.ProcessSimple.Common.Context;
 using FlowData::Microsoft.Azure.ProcessSimple.Data.Entities;
 using FlowData::Microsoft.Azure.ProcessSimple.Data.Components.AdaptiveCards;
 using FlowData::Microsoft.Azure.ProcessSimple.Data.Configuration;
@@ -48,20 +51,37 @@ namespace SimpleEchoBot.Dialogs
                     httpConfiguration: GlobalConfiguration.Configuration,
                     withUnencryptedFlowbotPassword: true);
 
+                var sendingAccount = incomingActivity.From.ToBotChannelAccount();
+                var responderUserIdentity = new UserIdentity { ObjectId = incomingActivity.From.AadObjectId, UserPrincipalName = sendingAccount.Id };
+
                 if (message.Text == null)
                 {
-                    var adaptiveActionData = AdaptiveActionData.Deserialize(incomingActivity.Value.ToString());
+                    // Current flowSvc code is case sensitive on this, and its incoming capitalization from emulator is now lowercase:
+                    var adaptiveActionData = AdaptiveActionData.Deserialize(JToken.Parse(incomingActivity.Value.ToString().Replace("actionType", "ActionType")));
 
                     await teamsFlowbotManager.ReceiveAdaptiveAction(
                         adaptiveActionData: adaptiveActionData,
                         replyActivity: incomingActivity.CreateReply().ToBotActivity(),
-                        sendingAccount: incomingActivity.From.ToBotChannelAccount(),
-                        sendingAccountAadObjectId: incomingActivity.From.AadObjectId,
+                        sendingAccount: sendingAccount,
+                        responderUserIdentity: responderUserIdentity,
                         idOfActivityFromWhichTheActionWasEmitted: null, // the method won't use this since we're supplying it with our own post method
+                        cancellationToken: new CancellationTokenSource().Token,
                         asyncPostActivity: (botActivity) => {
-                            return new ConnectorClient(new Uri(incomingActivity.ServiceUrl))
-                                .Conversations
-                                .UpdateActivityAsync(incomingActivity.Conversation.Id, incomingActivity.ReplyToId, botActivity.ToActivity());
+                            if (incomingActivity.ServiceUrl.StartsWith("http://localhost"))
+                            {
+                                // Message update appears to be broken in emulator: incomingActivity.ReplyToId is null, and even if we use the value it
+                                // should have, it doesn't work. Does not help to set id and replyToId on botActivity to match those of the message we're
+                                // updating. So for now, in emulator we post rather than updating.
+                                return new ConnectorClient(new Uri(incomingActivity.ServiceUrl))
+                                    .Conversations
+                                    .ReplyToActivityAsync(incomingActivity.Conversation.Id, incomingActivity.Id, botActivity.ToActivity());
+                            }
+                            else
+                            {
+                                return new ConnectorClient(new Uri(incomingActivity.ServiceUrl))
+                                    .Conversations
+                                    .UpdateActivityAsync(incomingActivity.Conversation.Id, incomingActivity.ReplyToId, botActivity.ToActivity());
+                            }
                         }
                     );
 
@@ -206,7 +226,10 @@ namespace SimpleEchoBot.Dialogs
                             environment: environment,
                             approvalLink: approvalLink,
                             approvalName: approvalName,
-                            approvalOptions: approvalOptions);
+                            approvalOptions: approvalOptions,
+                            itemLink: approvalItemLink,
+                            itemLinkDescription: approvalItemLinkDescription,
+                            onBehalfOfNotice: "The OnBehalfOf Notice!!!");
 
                         var replyActivity = incomingActivity.CreateReply("Your approval has been requested for the following item");
                         await context.PostAsync(replyActivity.ToBotActivity().WithAttachment(adaptiveCard).ToActivity());
